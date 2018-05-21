@@ -13,3 +13,14 @@ sqlcmd -i insertBooks.sql
 echo "Insert Discounts"
 sqlcmd -i insertDiscounts.sql
 
+echo "Insert UserDetails"
+sqlcmd -i insertUserDetails.sql
+
+echo "Insert Carts"
+sqlcmd -i insertCarts.sql
+
+echo "Insert CartItems"
+sqlcmd -i insertCartItems.sql
+
+
+
