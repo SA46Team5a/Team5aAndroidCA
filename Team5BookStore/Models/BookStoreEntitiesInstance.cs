@@ -8,7 +8,7 @@ namespace Team5BookStore.Models
 {
     partial class BookStoreEntities
     {
-        public BookStoreEntities instance;
+        private static BookStoreEntities instance;
 
         public static BookStoreEntities Instance
         {
