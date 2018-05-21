@@ -13,3 +13,5 @@ sqlcmd -i insertBooks.sql
 echo "Insert Discounts"
 sqlcmd -i insertDiscounts.sql
 
+echo "Insert Advertisements"
+sqlcmd -i insertAdvertisements.sql
