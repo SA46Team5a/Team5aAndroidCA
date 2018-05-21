@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage2.master.cs" Inherits="WebApplicationCA.MasterPage2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+     <style type="text/css">
+        .auto-style2 {
+            width: 105px;
+            height: 86px;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .dropdown {
+    position: relative;
+    display: inline-block;
+                  }
+
+        .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+                     }
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #ddd}
+       
+       
+        .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+           }
+
+     .dropdown:hover .dropdown-content {
+               display: block;
+                  }
+
+    </style>
+                       
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>            
+             <div class="header">
+                <div class="Logo">
+                    <a href="http://localhost:52814/m2.aspx">                   
+                    <img src="http://www.eatlogos.com/education_logos/png/m-letter-with-book-logo-design.png" class="auto-style2" />
+                        
+                        </a>
+                </div>                   
+
+                <div class="search">
+                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                     <asp:Button ID="Search" runat="server" Text="Search" />
+                </div>
+
+                <div class="Navigation">
+                   <asp:ImageButton ID="ImageButton1" runat="server" src="https://image.flaticon.com/icons/svg/2/2772.svg" Height="26px" Width="88px" />
+
+                    <div class="dropdown">
+                          <button class="dropbtn">Account</button>
+                          <div class="dropdown-content">
+                          <a href="http://localhost:52814/Login.aspx">Sign Out</a>
+                          <a href="#">Link 2</a>
+                          <a href="#">Link 3</a>
+                          </div>
+                    </div>
+                </div>
+
+            </div>
+
+             <div class="Container">
+              
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                    </asp:ContentPlaceHolder>
+            </div>
+            <div class="Footer">
+
+                <h5>(C)CopyRight</h5>
+                
+            </div>
+        </div>
+    </form>
+</body>
+</html>
