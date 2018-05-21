@@ -10,7 +10,7 @@
 namespace WebApplicationCA {
     
     
-    public partial class MasterPage2 {
+    public partial class AllUsers {
         
         /// <summary>
         /// head control.
