@@ -273,7 +273,7 @@
           <NavigationProperty Name="Carts" Relationship="Self.FK__Carts__UserName__46E78A0C" FromRole="UserDetails" ToRole="Carts" />
         </EntityType>
         <Association Name="FK__Books__AuthorID__3C69FB99">
-          <End Role="Authors" Type="Self.Author" Multiplicity="1" />
+          <End Role="Authors" Type="BookStoreModel.Author" Multiplicity="1" />
           <End Role="Books" Type="Self.Book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Authors">
@@ -346,7 +346,7 @@
         </Association>
         <EntityContainer Name="BookStoreEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Advertisements" EntityType="Self.Advertisement" />
-          <EntitySet Name="Authors" EntityType="Self.Author" />
+          <EntitySet Name="Authors" EntityType="BookStoreModel.Author" />
           <EntitySet Name="Books" EntityType="Self.Book" />
           <EntitySet Name="CartItems" EntityType="Self.CartItem" />
           <EntitySet Name="Carts" EntityType="Self.Cart" />
