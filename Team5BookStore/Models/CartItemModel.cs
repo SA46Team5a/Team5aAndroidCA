@@ -67,7 +67,7 @@ namespace Team5BookStore.Models
         private static List<CartItem> GetCartItems(UserDetail user)
         {
             Cart cart = CartModel.GetOpenCart(user);
-            List<CartItem> cartItems = context.CartItems.Where(ci => ci.Cart == cart).ToList();
+            List<CartItem> cartItems = context.CartItems.Where(ci => ci.Cart.CartID == cart.CartID).ToList();
             cartItems.Select(ci => ci.Book).ToList();
             return cartItems;
         }

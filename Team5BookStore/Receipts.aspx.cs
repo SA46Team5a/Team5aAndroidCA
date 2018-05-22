@@ -14,10 +14,13 @@ namespace Team5BookStore
         {
             if (!IsPostBack)
             {
-                BookStoreEntities context = BookStoreEntities.Instance;
-                GridView1.DataSource = context.CartItems.Where(ci => ci.CartID == 48).ToList();
+                //string username = Session[Constants.USER_ID].ToString();
+                string username = "Connie85";
+                GridView1.DataSource = CartItemModel.GetCartItems(username);
                 GridView1.DataBind();
-                DetailsView1.DataSource = context.UserDetails.ToList();
+                List<UserDetail> user = new List<UserDetail>();
+                user.Add(UserDetailModel.GetUserByUserName(username));
+                DetailsView1.DataSource = user;
                 DetailsView1.DataBind();
             }
         }
