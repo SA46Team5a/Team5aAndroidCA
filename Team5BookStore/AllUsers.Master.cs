@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebApplicationCA
+namespace Team5BookStore
 {
     public partial class AllUsers : System.Web.UI.MasterPage
     {

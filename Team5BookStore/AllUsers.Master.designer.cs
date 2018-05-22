@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplicationCA {
+namespace Team5BookStore {
     
     
     public partial class AllUsers {
