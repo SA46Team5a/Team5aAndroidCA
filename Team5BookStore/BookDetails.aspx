@@ -22,42 +22,65 @@
             position: absolute;
             top: 92px;
             left: -96px;
-            height: 566px;
+            height: 446px;
             width: 422px;
         }
         .auto-style7 {
             text-align: left;
         }
-        .auto-style8 {
-            margin-left: 418px;
-            margin-top: 0px;
-            margin-bottom: 0px;
-            margin-right: 2px;
-        }
-        .auto-style9 {
-            margin-left: 445px;
-            margin-top: 0px;
-        }
         .auto-style10 {
             text-align: right;
         }
-        .auto-style11 {
-            margin-top: 230px;
-        }
         .auto-style12 {
             width: 100%;
+        }
+        .newStyle1 {
+            position: absolute;
+        }
+        .auto-style13 {
+            position: absolute;
+            left: 478px;
+            top: 653px;
+            width: 160px;
+            height: 56px;
+        }
+        a {
+            position: absolute;
+        }
+        .auto-style15 {
+            text-align: center;
+        }
+        .newStyle2 {
+            position: absolute;
+        }
+        .auto-style16 {
+            position: absolute;
+            left: 478px;
+            top: 796px;
+            width: 164px;
+        }
+        .auto-style17 {
+            position: absolute;
+            left: 32px;
+            top: 676px;
+            width: 67px;
+            margin-left: 360px;
+            margin-top: 0px;
         }
         </style>
 </head>
 <body>
     <form id="form1" runat="server">
-         <h1>Book Details</h1>
+         <div class="auto-style10">
+         <h1 class="auto-style15">Book Details</h1>
         <div class="auto-style5">
 
             
+            <asp:Image ID="Image1" runat="server" Height="393px" />
+             
+            
             <br />
             <br />
-            <asp:Image ID="Image1" runat="server" Height="389px" Width="410px" />
             <table border="solid" style="margin-left: 553px; margin-top: 0px; " class="auto-style2">
   <tr>
     <th class="auto-style1" style="font-family: Arial, Helvetica, sans-serif; font-size: small; font-weight: normal; font-style: normal; text-align: left;">Author:<asp:Label ID="Label_Author" runat="server" Text="Author"></asp:Label>
@@ -97,22 +120,10 @@
        
 &nbsp;<p>
                 &nbsp;</p>
-        <p>
-            &nbsp;</p>
-        <p>
-            &nbsp;</p>
         <p aria-autocomplete="both" style="margin-top: 19px">
 &nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-
-          
-        
-         <p aria-autocomplete="both" style="margin-top: 19px" class="auto-style7">
              </br>
-         </p>
-        
-         <p aria-autocomplete="both" class="auto-style7" style="margin-top: 19px">
-             &nbsp;</p>
+            </p>
          <p aria-autocomplete="both" class="auto-style7" style="margin-top: 19px">
              &nbsp;</p>
          <p aria-autocomplete="both" class="auto-style7" style="margin-top: 19px">
@@ -126,20 +137,27 @@
           </div>
      
 
-        <div class="auto-style7">
+             <asp:Image ID="Image9" runat="server" Height="200px" ImageUrl="C:\Users\GongMeiting\Desktop\CA7\Team5BookStore\Team5BookStore\Resources\AdImages\amazon.png" /></br>
+     
+             &nbsp;<div class="auto-style7">
       
-         <p>
+         <p class="auto-style10">
+        
+    
+             
+            
+        
+    
+             <asp:Image ID="Image10" runat="server" Height="200px" ImageUrl="C:\Users\GongMeiting\Desktop\CA7\Team5BookStore\Team5BookStore\Resources\AdImages\Sentosa.jpg" Width="197px" />
+        
+    
+             
+            
         
     
          </p>
          <p class="auto-style10" property="og:image" style="font-size: x-small">
-             <asp:AdRotator ID="AdRotator1" runat="server" DataSourceID="XmlDataSource3" />
-             <asp:XmlDataSource ID="XmlDataSource3" runat="server" DataFile="~/Resources/XMLFile1.xml"></asp:XmlDataSource>
-             <asp:XmlDataSource ID="XmlDataSource2" runat="server"></asp:XmlDataSource>
-             <asp:XmlDataSource ID="XmlDataSource1" runat="server"></asp:XmlDataSource>
-             <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString6 %>" SelectCommand="SELECT [AdImage], [TargetURL] FROM [Advertisements]"></asp:SqlDataSource>
-             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString %>" SelectCommand="SELECT [AdImage], [TargetURL] FROM [Advertisements]"></asp:SqlDataSource>
-            </p>
+             &nbsp;</p>
          <p>
              &nbsp;</p>
          <p>
@@ -148,30 +166,34 @@
              &nbsp;</p>
          <p>
              
-         </p>
+             &nbsp;</p>
         </div>
          <p>
-             &nbsp;</p>
+             <asp:TextBox ID="TextBox_Quantity" runat="server" CssClass="auto-style13" TextMode="Number"></asp:TextBox></p>
          <p>
-             <asp:Label ID="Label1" runat="server" CssClass="auto-style9" Text="Quantity" Width="113px" Height="46px"></asp:Label>
-             <asp:TextBox ID="TextBox_Quantity" runat="server" CssClass="auto-style11" Height="32px" TextMode="Number"></asp:TextBox>
+             <asp:Label ID="Label1" runat="server" CssClass="auto-style17" Text="Quantity" Height="41px"></asp:Label>
+             </br>
+
+          
          </p>
          <p>
              &nbsp;</p>
+         <p class="auto-style15">
+             <asp:Button ID="Button1" runat="server" CssClass="auto-style16" Height="43px" Text="Add to cart" OnClick="Button_Addtocart_Click" />
+             </p>
          <p>
              &nbsp;</p>
          <p>
-             <asp:Button ID="Button1" runat="server" CssClass="auto-style8" Height="64px" Text="Add to cart" Width="202px" OnClick="Button_Addtocart_Click" />
+             &nbsp;</p>
+         <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </p>
+         <p class="auto-style10">
+            
+         </p>
          <p>
              &nbsp;</p>
-         <p>
-             &nbsp;</p>
-         <p>
-             &nbsp;</p>
-         <p>
-             &nbsp;</p>
-        <div>
+        <div class="auto-style10">
             <asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal">
                 <ItemTemplate>
                     <table class="auto-style12">
@@ -186,6 +208,11 @@
                
             </asp:DataList>
             </div>
+        <div class="auto-style15">
+        </div>
+         <p class="auto-style10">
+             &nbsp;</p>
+         </div>
     </form>
 </body>
 </html>
