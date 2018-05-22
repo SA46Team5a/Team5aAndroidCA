@@ -12,8 +12,7 @@ namespace Team5BookStore.Models
 
         static public Book GetBookByISBN(string ISBN)
         {
-
-            if (!Int64.TryParse(ISBN, out Int64 x) || !(ISBN.Length == 13))
+            if (!(ISBN.Length == 13) || !Int64.TryParse(ISBN, out Int64 x))
                 throw new InvalidObjectParams("ISBN of book must be a 13-digit numeric string");
             else
             {
@@ -30,8 +29,7 @@ namespace Team5BookStore.Models
 
 
         static public List<Book> GetBooksByAuthor(Author author)
-            => context.Books.Where(b => b.Author == author).ToList();
-
+            => context.Books.Where(b => b.Author.AuthorID == author.AuthorID).ToList();
 
         static public List<Book> SearchBooks(SearchFilter filter)
         {
