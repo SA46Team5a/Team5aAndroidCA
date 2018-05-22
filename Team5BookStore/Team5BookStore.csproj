@@ -164,6 +164,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="AllUsers.Master" />
+    <Content Include="AnonUsers.Master" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <EntityDeploy Include="Models\BookStoreModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -296,6 +298,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Exceptions\InvalidObjectParams.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -323,6 +326,7 @@
       <DependentUpon>BookStoreModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\BookModel.cs" />
+    <Compile Include="Models\BookPartial.cs" />
     <Compile Include="Models\BookStoreEntitiesInstance.cs" />
     <Compile Include="Models\BookStoreModels.Context.cs">
       <AutoGen>True</AutoGen>
@@ -348,9 +352,12 @@
     <Compile Include="Models\Category.cs">
       <DependentUpon>BookStoreModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\Discount.cs">
       <DependentUpon>BookStoreModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DiscountModel.cs" />
+    <Compile Include="Models\SearchFilter.cs" />
     <Compile Include="Models\UserDetail.cs">
       <DependentUpon>BookStoreModels.tt</DependentUpon>
     </Compile>

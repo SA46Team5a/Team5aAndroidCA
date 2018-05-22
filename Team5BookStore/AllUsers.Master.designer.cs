@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplicationCA {
+namespace Team5BookStore {
     
     
-    public partial class MasterPage2 {
+    public partial class AllUsers {
         
         /// <summary>
         /// head control.

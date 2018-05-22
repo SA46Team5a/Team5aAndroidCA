@@ -212,7 +212,7 @@
           <Property Name="AuthorID" Type="Int32" Nullable="false" />
           <Property Name="CategoryID" Type="Int32" Nullable="false" />
           <Property Name="ISBN" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Price" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" />
           <Property Name="StockLevel" Type="Int32" Nullable="false" />
           <Property Name="Synopsis" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Author" Relationship="Self.FK__Books__AuthorID__3C69FB99" FromRole="Books" ToRole="Authors" />

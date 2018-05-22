@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage2.master.cs" Inherits="WebApplicationCA.MasterPage2" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AllUsers.master.cs" Inherits="Team5BookStore.AllUsers" %>
 
 <!DOCTYPE html>
 
