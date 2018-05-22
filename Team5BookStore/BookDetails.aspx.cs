@@ -14,9 +14,32 @@ namespace Team5BookStore
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+        //    string isbn = Session[Constants.ISBN].ToString();
+        //    if (isbn != null)
+        //    {
+                //Book b = GetBookByISBN(isbn);
+                //Label_Author.Text = b.Author.AuthorName;
+                //Label_Title.Text = b.Title;
+                //Label_Category.Text = b.Category.CategoryName;
+                //Label_ISBN.Text = b.ISBN;
+                //Label_Price.Text = b.Price.ToString();
+                //Label_Discount.Text = b.Price.ToString();
+                //Label_Synopsis.Text = b.Synopsis;
+                //ImageButton.ImageUrl = "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
+                BookStoreEntities context = new BookStoreEntities();
+                 //<List> list = GetBooksByAuthor(b.Author.Authorname);
+                DataList1.DataSource = context.Books.Where(x => (int)x.AuthorID == 12).ToList();
+                DataList1.DataBind();
+            
 
-            string isbn = Session[Constants.ISBN].ToString();
-            Image1.ImageUrl =  "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
+            // Session["isbn"] = ((ImageButton)sender).ImageUrl.Split('.').First().Split('/').Last();
+
+
+
+
+
+
+            //Image1.ImageUrl =  "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
             //BookModel bm = new BookModel();
             //Book book = bm.GetBookByISBN(isbn);
             //string value = Request.QueryString(BookDetails.ISBN);
@@ -50,11 +73,11 @@ namespace Team5BookStore
                 context.SaveChanges();
 
 
-         ;
-                }
-
-            
+         
+            }
         }
+            
+        
         protected string GenImageURL(object isbn)
             => "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
        
@@ -64,3 +87,4 @@ namespace Team5BookStore
         }
     }
 }
+

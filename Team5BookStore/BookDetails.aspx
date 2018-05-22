@@ -44,6 +44,9 @@
         .auto-style11 {
             margin-top: 230px;
         }
+        .auto-style12 {
+            width: 100%;
+        }
         </style>
 </head>
 <body>
@@ -129,8 +132,12 @@
         
     
          </p>
-         <p class="auto-style10">
-             <asp:AdRotator ID="AdRotator1" runat="server" DataSourceID="SqlDataSource2" />
+         <p class="auto-style10" property="og:image" style="font-size: x-small">
+             <asp:AdRotator ID="AdRotator1" runat="server" DataSourceID="XmlDataSource3" />
+             <asp:XmlDataSource ID="XmlDataSource3" runat="server" DataFile="~/Resources/XMLFile1.xml"></asp:XmlDataSource>
+             <asp:XmlDataSource ID="XmlDataSource2" runat="server"></asp:XmlDataSource>
+             <asp:XmlDataSource ID="XmlDataSource1" runat="server"></asp:XmlDataSource>
+             <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString6 %>" SelectCommand="SELECT [AdImage], [TargetURL] FROM [Advertisements]"></asp:SqlDataSource>
              <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString %>" SelectCommand="SELECT [AdImage], [TargetURL] FROM [Advertisements]"></asp:SqlDataSource>
             </p>
          <p>
@@ -147,7 +154,7 @@
              &nbsp;</p>
          <p>
              <asp:Label ID="Label1" runat="server" CssClass="auto-style9" Text="Quantity" Width="113px" Height="46px"></asp:Label>
-             <asp:TextBox ID="TextBox_Quantity" runat="server" CssClass="auto-style11" Height="32px"></asp:TextBox>
+             <asp:TextBox ID="TextBox_Quantity" runat="server" CssClass="auto-style11" Height="32px" TextMode="Number"></asp:TextBox>
          </p>
          <p>
              &nbsp;</p>
@@ -165,35 +172,19 @@
          <p>
              &nbsp;</p>
         <div>
-         <asp:DataList ID="DataList1" runat="server" DataKeyField="ISBN" DataSourceID="SqlDataSource1" RepeatDirection="Horizontal" Height="93px" Width="169px" >
-             <ItemTemplate>
-                <asp:ImageButton runat="server" OnClick="image_Click" ID="image" ImageURL='<%# GenImageURL(Eval("ISBN")) %>' width="90" height="120"></asp:ImageButton>
-                 Title:
-                 <asp:Label ID="TitleLabel" runat="server" Text='<%# Eval("Title") %>' />
-                 <br />
-              
-                 AuthorID:
-                 <asp:Label ID="AuthorIDLabel" runat="server" Text='<%# Eval("AuthorID") %>' />
-                 <br />
-                 CategoryID:
-                 <asp:Label ID="CategoryIDLabel" runat="server" Text='<%# Eval("CategoryID") %>' />
-                 <br />
-                 ISBN:
-                 <asp:Label ID="ISBNLabel" runat="server" Text='<%# Eval("ISBN") %>' />
-                 <br />
-                 Price:
-                 <asp:Label ID="PriceLabel" runat="server" Text='<%# Eval("Price") %>' />
-                 <br />
-                 StockLevel:
-                 <asp:Label ID="StockLevelLabel" runat="server" Text='<%# Eval("StockLevel") %>' />
-                 <br />
-                 <br />
-              
-             </ItemTemplate>  
-
-         </asp:DataList>
-
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString5 %>" SelectCommand="SELECT [Title], [AuthorID], [CategoryID], [ISBN], [Price], [StockLevel] FROM [Books]"></asp:SqlDataSource>
+            <asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal">
+                <ItemTemplate>
+                    <table class="auto-style12">
+                        <tr>
+                            <td><asp:ImageButton runat="server" ID="ThumbNail" ImageURL='<%# GenImageURL(Eval("ISBN").ToString()) %>' width="100" height="110" OnClick="image_Click"/></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </ItemTemplate>
+               
+            </asp:DataList>
             </div>
     </form>
 </body>
