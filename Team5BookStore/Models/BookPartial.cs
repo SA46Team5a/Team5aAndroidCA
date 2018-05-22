@@ -10,7 +10,37 @@ namespace Team5BookStore.Models
     partial class Book
     {
         [NotMapped]
-        public decimal? DiscountedPrice { get; set; }
+        public decimal? DiscountedPrice
+        {
+            get
+            {
+                DateTime today = DateTime.Now;
+                List<Discount> discounts = Category.Discounts
+                    .Where(d => d.StartDate <= today && today <= d.EndDate)
+                    .ToList();
+
+                discounts.AddRange(
+                        DiscountModel.GetOngoingDiscounts().Where(d => d.Category is null)
+                    );
+
+                decimal discountPercent = 1;
+                if (discounts.Count > 0)
+                {
+
+                    foreach (Discount discount in discounts)
+                    {
+                        discountPercent *= discount.DiscountPercent;
+                    }
+                    return Price * discountPercent / 100;
+                }
+                else
+                    return null;
+            }
+            set
+            {
+                DiscountedPrice = value;
+            }
+        }
         [NotMapped]
         public int StockExcludingInCarts
         {
