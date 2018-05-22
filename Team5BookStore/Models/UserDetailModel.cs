@@ -14,8 +14,13 @@ namespace Team5BookStore.Models
             UserDetail newUser = new UserDetail
             {
                 UserName = username,
-                Email = email
+                Email = email,
+                Name = name,
+                ContactNumber = contact
             };
+
+            context.UserDetails.Add(newUser);
+            context.SaveChanges();
         }
     }
 }
