@@ -13,7 +13,7 @@ namespace Team5BookStore.Models
         static public Book GetBookByISBN(string ISBN)
         {
 
-            if (!Int32.TryParse(ISBN, out int x) || ISBN.Length == 13)
+            if (!Int64.TryParse(ISBN, out Int64 x) || !(ISBN.Length == 13))
                 throw new InvalidObjectParams("ISBN of book must be a 13-digit numeric string");
             else
             {
