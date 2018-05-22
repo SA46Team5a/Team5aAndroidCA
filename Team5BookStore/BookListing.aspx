@@ -31,64 +31,54 @@
         <!DOCTYPE html>
         <h1 aria-readonly="True" style="text-align: center">    Welcome to ISS Book store! <br\>We hope you have a good day!</h1>
 
-             <div class="div1">
-                <h4>
-                    <asp:Label ID="Label5" runat="server" style="font-weight: 700" Text="Catogory"></asp:Label>
-                </h4>
-                <asp:CheckBoxList ID="CheckBoxList1" runat="server" RepeatDirection="Horizontal" AutoPostBack="True" BorderStyle="Dotted" BorderWidth="0px" Height="116px" RepeatColumns="2" Width="196px">
-                    <asp:ListItem>Children</asp:ListItem>
-                    <asp:ListItem>Finance</asp:ListItem>
-                    <asp:ListItem>Non-Fiction</asp:ListItem>
-                    <asp:ListItem>Technical</asp:ListItem>
-                </asp:CheckBoxList>
-                <asp:CheckBox ID="CheckBox1" runat="server" Text="Discount" />
-                <br />
-                <br />
-                <asp:Label ID="Label6" runat="server" style="font-weight: 700" Text="Sort by:"></asp:Label>
-                <br />
-                <br />
-                <asp:DropDownList ID="DropDownList1" runat="server" Width="200px">
-                    <asp:ListItem>Book Title</asp:ListItem>
-                    <asp:ListItem>Author</asp:ListItem>
-                </asp:DropDownList>
-            </div>
-             
-            <asp:DataList ID="DataList1" runat="server" DataKeyField="BookID" DataSourceID="SqlDataSource1" Height="417px" style="margin-right: 292px; text-align: left; margin-left: 0px; margin-top: 0px;" RepeatColumns="6" RepeatDirection="Horizontal" Width="805px" CssClass="tableCSS">
-                <ItemTemplate>
-                    <table class="auto-style1" border="0">
-                        <tr>
-                            <td style="text-align: center" class="auto-style2">
-                                 <a href="WebForm1"><image src="images/<%# Eval("ISBN") %>.jpg" width="150" height="150"></image> 
-                            </td>
+            <div>
+                <asp:ListView ID="ListView1" runat="server" DataSourceID="Books" GroupItemCount="3" >
+                    <GroupTemplate>
+                        <tr id="itemPlaceholderContainer" runat="server">
+                            <td id="itemPlaceholder" runat="server"></td>
                         </tr>
-                        <tr>
-                            <td style="text-align: center">
-                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("Title").ToString ().Length>20?Eval("Title").ToString().Substring(0,20):Eval("Title").ToString() %>' style="text-align: justify" EnableTheming="True" ForeColor="#0099FF" ToolTip=<%# Eval("Title") %>></asp:Label>
-                            
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center">
-                                <asp:Label ID="Label2" runat="server" style="text-align: justify" Text='<%# Eval("Author").ToString ().Length>10?Eval("Author").ToString().Substring(0,10):Eval("Author").ToString() %>'></asp:Label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center">
-                                <asp:Label ID="Label3" runat="server" Text='<%# Eval("CategoryID").ToString ().Length>20?Eval("CategoryID").ToString().Substring(0,20):Eval("CategoryID").ToString() %>'></asp:Label>
-<%--                                                                         <%# Eval("id").ToString().Length>10?Eval("id").ToString().Substring(0,10):Eval("id").ToString %>                --%>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: center">
-                                <asp:Label ID="Label4" runat="server" Text='<%# Eval("Price") %>' ForeColor="Red" style="font-weight: 700"></asp:Label>
-                            </td>
-                        </tr>                    
-                    </table>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-                    <br />
-                </ItemTemplate>
-            </asp:DataList> 
-             
-            <br />
-       
+                    </GroupTemplate>
+                    <ItemTemplate>
+                        <td runat="server" style="">Title:
+                            <asp:Label ID="TitleLabel" runat="server" Text='<%# Eval("Title") %>' />
+                            <br />
+                            <asp:Label ID="AuthorLabel" runat="server" Text='<%# Eval("Author") %>' />
+                            <br />
+                            <asp:Label ID="CategoryLabel" runat="server" Text='<%# Eval("Category") %>' />
+                            <br />
+                            <asp:Label ID="PriceLabel" runat="server" Text='<%# Eval("Price") %>' />
+                            <br />
+                            <asp:ImageButton ImageUrl='<%# Eval("Address") %>' runat="server" OnClick="Image_ClickEvent" Value='<%# Eval("ISBN") %>'/>
+                            <br />
+                        </td>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <table runat="server">
+                            <tr runat="server">
+                                <td runat="server">
+                                    <table id="groupPlaceholderContainer" runat="server" border="0" style="">
+                                        <tr id="groupPlaceholder" runat="server">
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr runat="server">
+                                <td runat="server" style="">
+                                    <asp:DataPager ID="DataPager1" runat="server" PageSize="12">
+                                        <Fields>
+                                            <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                            <asp:NumericPagerField />
+                                            <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        </Fields>
+                                    </asp:DataPager>
+                                </td>
+                            </tr>
+                        </table>
+                    </LayoutTemplate>
+                </asp:ListView>
+                <asp:SqlDataSource ID="Books" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString %>" SelectCommand="SELECT b.Title, a.Author, c.Category, b.Price, CONCAT('~/Resources/BookCovers/', b.ISBN, '.jpg') as Address, b.ISBN
+FROM Books b, Authors a, Categories c
+Where a.AuthorID = b.AuthorID and c.CategoryID = b.CategoryID
+"></asp:SqlDataSource>
+            </div>    
 </asp:Content>

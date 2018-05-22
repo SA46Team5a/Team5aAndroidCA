@@ -10,6 +10,7 @@ namespace Team5BookStore.Models
 
         public SearchFilter (List<int> categoryIDs, bool discount, string searchTerm)
         {
+            Categories = new List<Category>();
             foreach (int catID in categoryIDs)
             {
                 Categories.Add(CategoryModel.GetCategoryByID(catID));

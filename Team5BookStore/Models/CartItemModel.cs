@@ -96,7 +96,7 @@ namespace Team5BookStore.Models
         public static Cart GetOpenCart(UserDetail user)
         {
             List<Cart> openCart = context.Carts
-                .Where(c => c.UserDetail == user && !c.CheckedOut)
+                .Where(c => c.UserDetail.UserName == user.UserName && !c.CheckedOut)
                 .ToList();
 
             if (openCart.Count == 0)

@@ -4,9 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 using Team5BookStore.Models;
-using System.Data.SqlClient;
 
 namespace Team5BookStore
 {
@@ -14,53 +12,51 @@ namespace Team5BookStore
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             string isbn = Session[Constants.ISBN].ToString();
-            Image1.ImageUrl =  "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
-            //BookModel bm = new BookModel();
-            //Book book = bm.GetBookByISBN(isbn);
-            //string value = Request.QueryString(BookDetails.ISBN);
 
-            //Response.Write(value);
-
-        }
-
-        protected void TextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void Button_Addtocart_Click(object sender, EventArgs e)
-        {
-            //    public static void AddOrder(string user, int foodID, string foodname,
-            //string size, string chilli, string salt, string pepper)
+            if (!IsPostBack)
             {
-                BookStoreEntities context = new BookStoreEntities();
-                CartItem c = new CartItem();
-                c.ISBN = Label_ISBN.Text;
-                c.Quantity = Convert.ToInt32(TextBox_Quantity.Text);
-                c.TimeAdded = DateTime.Now;
+                // Session[Constants.ISBN].ToString();
+                if (isbn != null)
+                {
 
-                context.CartItems.Add(c);
-                context.SaveChanges();
+               
+                    Book b = BookModel.GetBookByISBN(isbn);
+                    Label_Author.Text = b.Author.AuthorName;
+                    Label_Title.Text = b.Title;
+                    Label_Category.Text = b.Category.CategoryName;
+                    Label_ISBN.Text = b.ISBN;
+                    Label_Price.Text = b.Price.ToString();
+                    Label_Discount.Text = b.Price.ToString();
+                    Label_Synopsis.Text = b.Synopsis;
+                    Image1.ImageUrl = "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
 
 
-         ;
+                    List<Book> list = BookModel.GetBooksByAuthor(b.Author);
+                    DataList1.DataSource = list;
+                    DataList1.DataBind();
+                   
                 }
-
-            
+            }
         }
         protected string GenImageURL(object isbn)
-            => "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
-       
-      protected void image_Click(object sender, EventArgs eventArgs )
+                   => "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
+        protected void Button_Addtocart_Click(object sender, EventArgs e)
         {
-            Response.Redirect("BookDetails.aspx");
-        }
+
+            CartItemModel.AddToCart(Label_ISBN.Text, "Benjam62", Convert.ToInt32(TextBox_Quantity.Text));
+            Response.Write("<script LANGUAGE='JavaScript' >alert('Book added successful')</script>");
     }
-}
+
+
+    //protected string GenImageURL(object isbn)
+    //=> "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
+
+    protected void image_Click(object sender, EventArgs eventArgs)
+                {
+
+                    Response.Redirect("BookDetails.aspx");
+                }
+            }
+        }
+    
