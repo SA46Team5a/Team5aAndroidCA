@@ -15,7 +15,7 @@ namespace Team5BookStore
             if (!IsPostBack)
             {
                 BookStoreEntities context = BookStoreEntities.Instance;
-                GridView1.DataSource = context.CartItems.ToList();
+                GridView1.DataSource = context.CartItems.Where(ci => ci.CartID == 48).ToList();
                 GridView1.DataBind();
                 DetailsView1.DataSource = context.UserDetails.ToList();
                 DetailsView1.DataBind();
