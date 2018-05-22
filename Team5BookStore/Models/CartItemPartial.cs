@@ -16,6 +16,8 @@ namespace Team5BookStore.Models
                 return Book.DiscountedPrice is null ? Book.Price : Book.DiscountedPrice;
             }
         }
+
+        [NotMapped]
         public decimal? TotalPrice
         {
             get
