@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements xmlns="http://schemas.microsoft.com/AspNet/AdRotator-Schedule-File">
+  <Ad>
+    <ImageUrl>C:\Users\GongMeiting\Desktop\CA7\Team5BookStore\Team5BookStore\Resources\AdImages\amazon.jpg</ImageUrl>
+    <NavigateUrl>http://www.google.com</NavigateUrl>
+    <AlternateText>Apple</AlternateText>
+    <Impressions>10</Impressions>
+    <Height>100px</Height>
+    <Width>100px</Width>
+  </Ad>
+  <Ad>
+    <ImageUrl>C:\Users\GongMeiting\Desktop\CA7\Team5BookStore\Team5BookStore\Resources\AdImages\apple.jpg</ImageUrl>
+    <NavigateUrl>http://www.google.com</NavigateUrl>
+    <AlternateText>Apple</AlternateText>
+    <Impressions>10</Impressions>
+    <Height>100px</Height>
+    <Width>100px</Width>
+  </Ad>
+  <Ad>
+    <ImageUrl>C:\Users\GongMeiting\Desktop\CA7\Team5BookStore\Team5BookStore\Resources\AdImages\apple.jpg</ImageUrl>
+    <NavigateUrl>http://www.google.com</NavigateUrl>
+    <AlternateText>Apple</AlternateText>
+    <Impressions>10</Impressions>
+    <Height>100px</Height>
+    <Width>100px</Width>
+  </Ad>
+  <Ad>
+    <ImageUrl>C:\Users\GongMeiting\Desktop\CA7\Team5BookStore\Team5BookStore\Resources\AdImages\apple.jpg</ImageUrl>
+    <NavigateUrl>http://www.google.com</NavigateUrl>
+    <AlternateText>Apple</AlternateText>
+    <Impressions>10</Impressions>
+    <Height>100px</Height>
+    <Width>100px</Width>
+  </Ad>
+</Advertisements>

@@ -17,5 +17,9 @@ namespace Team5BookStore
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+        void Session_Start(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

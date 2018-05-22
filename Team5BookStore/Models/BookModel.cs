@@ -12,14 +12,13 @@ namespace Team5BookStore.Models
 
         static public Book GetBookByISBN(string ISBN)
         {
-
-            if (!Int32.TryParse(ISBN, out int x) || ISBN.Length == 13)
+            if (!(ISBN.Length == 13) || !Int64.TryParse(ISBN, out Int64 x))
                 throw new InvalidObjectParams("ISBN of book must be a 13-digit numeric string");
             else
             {
-                List<Book> books = DiscountBooks(context.Books
+                List<Book> books = context.Books
                     .Where(b => b.ISBN == ISBN)
-                    .ToList());
+                    .ToList();
                 if (books.Count > 0)
                     return books.First(b => b.ISBN == ISBN);
                 else
@@ -30,8 +29,7 @@ namespace Team5BookStore.Models
 
 
         static public List<Book> GetBooksByAuthor(Author author)
-            => DiscountBooks(context.Books.Where(b => b.Author == author).ToList());
-
+            => context.Books.Where(b => b.Author.AuthorID == author.AuthorID).ToList();
 
         static public List<Book> SearchBooks(SearchFilter filter)
         {
@@ -64,27 +62,7 @@ namespace Team5BookStore.Models
                     !b.Title.Contains(filter.SearchTerm) 
                     && !b.Author.AuthorName.Contains(filter.SearchTerm));
 
-            return DiscountBooks(searchResult);
-        }
-
-        static public List<Book> DiscountBooks(List<Book> books)
-        {
-            List<Discount> discounts = DiscountModel.GetOngoingDiscounts();
-            
-            foreach (Book book in books)
-            {
-                decimal discountPercent = 1;
-                foreach (Discount discount in discounts)
-                {
-                    if (discount.Category is null || discount.Category == book.Category)
-                        discountPercent *= discount.DiscountPercent;
-                }
-                if (discountPercent == 1)
-                    book.DiscountedPrice = null;
-                else
-                    book.DiscountedPrice = book.Price * discountPercent / 100;
-            }
-            return books;
+            return searchResult;
         }
     }
 }
