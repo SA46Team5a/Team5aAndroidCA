@@ -170,7 +170,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BookStoreModels.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Login.aspx" />
     <Content Include="Models\BookStoreModels.edmx.diagram">
       <DependentUpon>BookStoreModels.edmx</DependentUpon>
     </Content>
@@ -185,7 +184,6 @@
       <DependentUpon>BookStoreModels.edmx</DependentUpon>
       <LastGenOutput>BookStoreModels.cs</LastGenOutput>
     </Content>
-    <Content Include="Register.aspx" />
     <Content Include="Resources\AdImages\ad_placeholder.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -244,6 +242,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Exceptions\InvalidObjectParams.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -261,13 +260,6 @@
     <Compile Include="AllUsers.Master.designer.cs">
       <DependentUpon>AllUsers.Master</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Models\Advertisement.cs">
       <DependentUpon>BookStoreModels.tt</DependentUpon>
     </Compile>
@@ -278,6 +270,7 @@
       <DependentUpon>BookStoreModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\BookModel.cs" />
+    <Compile Include="Models\BookPartial.cs" />
     <Compile Include="Models\BookStoreEntitiesInstance.cs" />
     <Compile Include="Models\BookStoreModels.Context.cs">
       <AutoGen>True</AutoGen>
@@ -303,9 +296,12 @@
     <Compile Include="Models\Category.cs">
       <DependentUpon>BookStoreModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\Discount.cs">
       <DependentUpon>BookStoreModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DiscountModel.cs" />
+    <Compile Include="Models\SearchFilter.cs" />
     <Compile Include="Models\UserDetail.cs">
       <DependentUpon>BookStoreModels.tt</DependentUpon>
     </Compile>
