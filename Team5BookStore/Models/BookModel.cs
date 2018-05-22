@@ -12,8 +12,7 @@ namespace Team5BookStore.Models
 
         static public Book GetBookByISBN(string ISBN)
         {
-
-            if (!Int64.TryParse(ISBN, out Int64 x) || !(ISBN.Length == 13))
+            if (!(ISBN.Length == 13) || !Int64.TryParse(ISBN, out Int64 x))
                 throw new InvalidObjectParams("ISBN of book must be a 13-digit numeric string");
             else
             {
@@ -28,14 +27,15 @@ namespace Team5BookStore.Models
 
         }
 
+        static public List<Book> GetAllBooks()
+            => context.Books.ToList();
 
         static public List<Book> GetBooksByAuthor(Author author)
-            => context.Books.Where(b => b.Author == author).ToList();
-
+            => context.Books.Where(b => b.Author.AuthorID == author.AuthorID).ToList();
 
         static public List<Book> SearchBooks(SearchFilter filter)
         {
-            List<Book> searchResult = context.Books.ToList();
+            List<Book> searchResult = new List<Book>();
             List<Category> categoriesToSearch = filter.Categories;
 
             if (filter.Discount)
@@ -56,7 +56,10 @@ namespace Team5BookStore.Models
             }
 
             // Filter by selected categories
-            searchResult.Where(b => categoriesToSearch.Any(c => c == b.Category));
+            if (categoriesToSearch.Count > 0)
+                categoriesToSearch.ForEach(c => searchResult.AddRange(c.Books));
+            else if (!filter.Discount)
+                searchResult.AddRange(GetAllBooks());
 
             // Only filter by search term if search term is not an empty string
             if (filter.SearchTerm.Length > 0 )

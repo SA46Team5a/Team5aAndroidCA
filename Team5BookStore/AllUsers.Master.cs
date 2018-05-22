@@ -13,5 +13,10 @@ namespace Team5BookStore
         {
 
         }
+
+        protected void Search_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

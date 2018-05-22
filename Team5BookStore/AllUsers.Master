@@ -85,12 +85,11 @@
                     <a href="http://localhost:52814/m2.aspx" style="background-color: #FF9933">                   
                     <img src="http://www.eatlogos.com/education_logos/png/m-letter-with-book-logo-design.png" class="auto-style2" style="background-color: #FF9933" />
                         
+
                        <%-- </a>ISS Book Store</div> --%>                  
                 
                        </a><CENTER><Font color="white" style="font-size:larger"> ISS BOOK STORE</Font></CENTER>
                 <div class="auto-style3" style="background-color: #FF9933">
-                  
-
                     <div class="dropdown" style="float:right">
                           <button class="dropbtn" style="color: #000000; background-color: #6699FF; font-weight: normal;">Account</button>
                           <div class="dropdown-content">
