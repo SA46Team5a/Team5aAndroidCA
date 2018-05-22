@@ -31,68 +31,54 @@
         <!DOCTYPE html>
         <h1 aria-readonly="True" style="text-align: center">    Welcome to ISS Book store! <br\>We hope you have a good day!</h1>
 
-             <div class="div1">
-                <h4>
-                    <asp:Label ID="Label5" runat="server" style="font-weight: 700" Text="Catogory"></asp:Label>
-                </h4>
-                <asp:CheckBox  ID="ChildenCheckBox" runat="server" Text="Childen" />
-                <asp:CheckBox  ID="FinanceCheckBox" runat="server" Text="Finance" />
-                <asp:CheckBox  ID="NonFictionCheckBox" runat="server" Text="Non-Fiction" />
-                <asp:CheckBox  ID="TechnicalCheckBox" runat="server" Text="Technical" />
-                 <br />
-                <asp:CheckBox value="5" ID="DiscountCheckBox" runat="server" Text="Discount" />
-                <br />
-                <br />
-                <asp:Label ID="Label6" runat="server" style="font-weight: 700" Text="Sort by:"></asp:Label>
-                <br />
-                <br />
-                <asp:DropDownList ID="SortDropDownList" runat="server" Width="200px" AutoPostBack="True" OnSelectedIndexChanged="SortDropDownList_SelectedIndexChanged">
-                    <asp:ListItem Value="0">Book Title</asp:ListItem>
-                    <asp:ListItem Value="1">Author</asp:ListItem>
-                </asp:DropDownList>
-            </div>
-    <div>
-        <asp:DataList ID="DataList1" runat="server" DataKeyField="ISBN" RepeatColumns="6" OnItemCommand="DataList1_ItemCommand" RepeatDirection="Horizontal" >
-                <ItemTemplate>
-                    
-                    <table class="auto-style1">
-                        <tr>
-                            <asp:ImageButton runat="server" ID="ThumbNail" ImageURL='<%# GenImageURL(Eval("ISBN").ToString()) %>' width="100" height="110" OnClick="MoreInfoButton_Click"/> 
+            <div>
+                <asp:ListView ID="ListView1" runat="server" DataSourceID="Books" GroupItemCount="3" >
+                    <GroupTemplate>
+                        <tr id="itemPlaceholderContainer" runat="server">
+                            <td id="itemPlaceholder" runat="server"></td>
                         </tr>
-                        <tr>
-                            <td>
-                                <asp:Label ID="Label1"  runat="server" Commandname="Answer" Text='<%# Eval("Title") %>'></asp:Label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style2">
-                                <asp:Label ID="Label2" runat="server" Text='<%#  Eval("Category.CategoryName") %>'></asp:Label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:Label ID="Label3" runat="server" Text='<%# Eval("Author.AuthorName") %>'></asp:Label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:Label ID="Label4" runat="server" Text='<%# Eval("Price") %>'></asp:Label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <asp:Button ID="Button1" runat="server" Text="Button" CommandName="delete" CommandArgument='<%#  Eval("ISBN") %>'/>
-                                <asp:Button ID="Button2" runat="server" Text="Button" />
-                            </td>
-                        </tr>
-                    </table>
-                   
-                </ItemTemplate>
-            </asp:DataList>
-        </div>
-             
-            <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
-             
-            <br />
-       
+                    </GroupTemplate>
+                    <ItemTemplate>
+                        <td runat="server" style="">Title:
+                            <asp:Label ID="TitleLabel" runat="server" Text='<%# Eval("Title") %>' />
+                            <br />
+                            <asp:Label ID="AuthorLabel" runat="server" Text='<%# Eval("Author") %>' />
+                            <br />
+                            <asp:Label ID="CategoryLabel" runat="server" Text='<%# Eval("Category") %>' />
+                            <br />
+                            <asp:Label ID="PriceLabel" runat="server" Text='<%# Eval("Price") %>' />
+                            <br />
+                            <asp:ImageButton ImageUrl='<%# Eval("Address") %>' runat="server" OnClick="Image_ClickEvent" Value='<%# Eval("ISBN") %>'/>
+                            <br />
+                        </td>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <table runat="server">
+                            <tr runat="server">
+                                <td runat="server">
+                                    <table id="groupPlaceholderContainer" runat="server" border="0" style="">
+                                        <tr id="groupPlaceholder" runat="server">
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr runat="server">
+                                <td runat="server" style="">
+                                    <asp:DataPager ID="DataPager1" runat="server" PageSize="12">
+                                        <Fields>
+                                            <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                            <asp:NumericPagerField />
+                                            <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                        </Fields>
+                                    </asp:DataPager>
+                                </td>
+                            </tr>
+                        </table>
+                    </LayoutTemplate>
+                </asp:ListView>
+                <asp:SqlDataSource ID="Books" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString %>" SelectCommand="SELECT b.Title, a.Author, c.Category, b.Price, CONCAT('~/Resources/BookCovers/', b.ISBN, '.jpg') as Address, b.ISBN
+FROM Books b, Authors a, Categories c
+Where a.AuthorID = b.AuthorID and c.CategoryID = b.CategoryID
+"></asp:SqlDataSource>
+            </div>    
 </asp:Content>
