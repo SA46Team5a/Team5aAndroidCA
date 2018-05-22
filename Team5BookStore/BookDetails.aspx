@@ -2,20 +2,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <style type="text/css">
-        .newStyle1 {
-            position: absolute;
+        
+        .test{
+            color:coral;
+            background-color:white;
+            border:thick;
+            border-color:brown;
+
         }
-        .auto-style4 {
-            position: absolute;
-            left: 415px;
-            top: -714px;
-            width: 336px;
-            height: 230px;
+        .table{
+            background-color:antiquewhite;
+            border-color:antiquewhite;
+            border:thick;
+            border-color:brown;
         }
-        .newStyle2 {
-            position: absolute;
-            z-index: auto;
-        }
+        
         .auto-style5 {
             position: absolute;
             z-index: auto;
@@ -23,12 +24,7 @@
             top: 1070px;
             width: 215px;
         }
-        .newStyle3 {
-            position: absolute;
-        }
-        .newStyle4 {
-            position: absolute;
-        }
+      
         .auto-style7 {
             position: absolute;
             left: 363px;
@@ -36,188 +32,164 @@
         }
         .auto-style8 {
             position: absolute;
-            left: 479px;
-            top: -14px;
-            width: 218px;
-            height: 269px;
+            left: 254px;
+            top: -5px;
+            width: 176px;
+            height: 223px;
         }
-        .newStyle5 {
-            position: absolute;
-        }
-        .newStyle6 {
-            position: absolute;
-        }
-        .auto-style9 {
+     
+        h1 {
             text-align: center;
-        }
-        .auto-style16 {
-            position: absolute;
-            left: 456px;
-            top: 865px;
-            height: 38px;
-            width: 135px;
+            color:white;
+            background-color:#873a3a;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size:large;
         }
         .auto-style17 {
             position: absolute;
-            left: 401px;
-            top: 788px;
-            height: 28px;
-            width: 122px;
+            left: 470px;
+            top: -355px;
+            height: 40px;
+            width: 138px;
             margin-right: 0px;
         }
         .auto-style13 {
             position: absolute;
-            left: 521px;
-            top: 787px;
-            height: 30px;
-            width: 133px;
+            left: 627px;
+            top: -364px;
+            height: 39px;
+            width: 187px;
             margin-bottom: 0px;
+             border: solid #07839f;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    /*-ms-border-radius: 10px;
+                    -o-border-radius: 10px;*/
+                    border-radius: 10px;
         }
         .auto-style18 {
             position: absolute;
             left: 0px;
-            top: -764px;
-            height: 290px;
-            width: 368px;
+            top: -756px;
+            height: 282px;
+            width: 294px;
         }
         .auto-style19 {
-            margin-top: 488px;
+            margin-top: 369px;
         }
         .auto-style20 {
             position: absolute;
-            left: 356px;
-            top: 318px;
-            height: 974px;
+            left: 686px;
+            top: 315px;
+            height: 692px;
+            margin-left: 0px;
+            margin-right: 0px;
+            width: 818px;
         }
-        .auto-style21 {
-            margin-left: 469px;
-            margin-top: 355px;
-        }
-        .auto-style22 {
-            text-align: right;
-        }
-        .newStyle7 {
-            position: absolute;
-        }
+      
+        
         .newStyle8 {
             position: absolute;
+            top: 472px;
+            left: -51px;
+            height: 41px;
+            width: 616px;
+            text-align: left;
         }
         .auto-style23 {
             position: absolute;
-            left: 492px;
-            top: 281px;
-            height: 28px;
-            width: 138px;
-            bottom: 665px;
+            left: 277px;
+            top: 242px;
+            height: 34px;
+            width: 85px;
+            bottom: 632px;
         }
+        .h1 {
+            position: absolute;
+            color:white;
+            background-color:#873a3a;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size:large;
+            height:50px;
+
+        }
+        
+       
+        .auto-style25 {
+            position: absolute;
+            left: 35px;
+            top: -383px;
+            height: 89px;
+            width: 181px;
+        }
+       
+        .auto-style26 {
+            position: absolute;
+            left: 257px;
+            top: 320px;
+            width: 175px;
+            height: 167px;
+        }
+       
+        .auto-style27 {
+            position: absolute;
+            color: white;
+            background-color: #873a3a;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+            left: 23px;
+            top: 181px;
+            width: 1118px;
+            height: 61px;
+        }
+        .auto-style31 {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            width: 285px;
+        }
+       
+       
+      
         .newStyle9 {
             position: absolute;
-        }
-        .auto-style24 {
-            position: absolute;
-            left: 508px;
-            top: 629px;
-            width: 171px;
-            height: 33px;
         }
         .newStyle10 {
             position: absolute;
         }
-        .auto-style25 {
-            position: absolute;
-            left: 0px;
-            top: 71px;
-            height: 30px;
-        }
-        .newStyle11 {
-            position: absolute;
-        }
-        .auto-style26 {
-            position: absolute;
-            left: 474px;
-            top: 705px;
-            width: 224px;
-            height: 235px;
-        }
-        .newStyle12 {
-            position: absolute;
-        }
-        .auto-style27 {
-            position: absolute;
-            left: 487px;
-            top: 962px;
-            height: 29px;
-            width: 206px;
-        }
-        .auto-style28 {
-            width: 219px;
-        }
+       
+      
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="auto-style10">
-         <h1 class="auto-style9">Book Details</h1>
+    <div class="auto-style10" style="border-style: solid; border-width: thin; font-size: 30px">
+         <h1 class="auto-style27" style="font-size: 58px; font-weight: bold; font-style: inherit; background-color: #990000;" aria-dropeffect="none">Book Details</h1>
         <div class="auto-style5">
 
-            
-            <asp:Image ID="Image1" runat="server" CssClass="auto-style18" />
-             
-            
+          
+            <div>
+            <asp:Image ID="Image_BookImage" runat="server" CssClass="auto-style18" />
             <br />
-            <br />
-            <table border="solid" style="margin-top: 0px; " class="auto-style4">
-  <tr>
-    <th class="auto-style1" style="font-family: Arial, Helvetica, sans-serif; font-size: small; font-weight: normal; font-style: normal; text-align: left;">Author:<asp:Label ID="Label_Author" runat="server" Text="Author"></asp:Label>
-      </th> 
-  </tr>
-  <tr>
-    <td class="auto-style1">Title:<asp:Label ID="Label_Title" runat="server" Text="Title"></asp:Label>
-      </td> 
-  </tr>
-  <tr>
-    <td class="auto-style1">Category:<asp:Label ID="Label_Category" runat="server" Text="Category"></asp:Label>
-      </td>
-  </tr>
-  <tr>
-    <td class="auto-style1">ISBN number:<asp:Label ID="Label_ISBN" runat="server" Text="ISBN number"></asp:Label>
-      </td> 
-  </tr>
-    <tr>
-    <td class="auto-style1">Price:<asp:Label ID="Label_Price" runat="server" Text="Price"></asp:Label>
-        </td> 
-  </tr>
-                <tr>
-    <td class="auto-style1">Discount:<asp:Label ID="Label_Discount" runat="server" Text="Discount"></asp:Label>
-        </td> 
-  </tr>
-                <tr>
-    <td>Synopsis:<asp:Label ID="Label_Synopsis" runat="server" Text="Synopsis"></asp:Label>
-        </td> 
-  </tr>
-               
+            <p class="auto-style9">
+             <asp:Label ID="Label_Quantity" runat="server" CssClass="auto-style17" Text="Quantity:" BorderColor="#990033" Font-Bold="True" ForeColor="#993333"></asp:Label>
+             <asp:TextBox ID="TextBox_Quantity" runat="server" CssClass="auto-style13" TextMode="Number" BackColor="#FFCC99" BorderColor="#993333" BorderStyle="Solid" ForeColor="Black"></asp:TextBox></p>
+                <p class="auto-style9">
+                    &nbsp;</p>
 
-</table>
-
+            </div>
+ <p class="auto-style9">
+ 
+             </p>
 
             <br />
-
-       
-&nbsp;<p>
-                &nbsp;</p>
         <p aria-autocomplete="both" style="margin-top: 19px">
-&nbsp;&nbsp;&nbsp;&nbsp;
+
              </br>
-            <asp:Label ID="Label_Recommendedbooks" runat="server" CssClass="auto-style25" Text="Recommended books"></asp:Label>
+            <asp:Label  ID="Label_Recommendedbooks" ForeColor="#993300" Font-Bold="true" Font-Size="Larger" Font-Italic="true"  runat="server" CssClass="auto-style25" Text="Recommended books"></asp:Label>
             </p>
          <p aria-autocomplete="both" class="auto-style7" style="margin-top: 19px">
              &nbsp;</p>
-         <p aria-autocomplete="both" class="auto-style7" style="margin-top: 19px">
-             &nbsp;</p>
-         <p aria-autocomplete="both" class="auto-style7" style="margin-top: 19px">
-             &nbsp;</p>
-         <p aria-autocomplete="both" class="auto-style7" style="margin-top: 19px">
-             &nbsp;</p>
-        
+                 
          </br>
           </div>
      
@@ -234,8 +206,7 @@
         
     
              <asp:Image ID="Image10" runat="server" ImageUrl="~/Resources/AdImages/Sentosa.jpg" CssClass="auto-style8" />
-             <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style23" NavigateUrl="https://www.sentosa.com.sg/">Sentosa</asp:HyperLink>
-             <asp:Image ID="Image2" runat="server" ImageUrl="~/Resources/AdImages/NUS_ISS.jpg" CssClass="auto-style21" Height="249px" Width="228px"  />
+             <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style23" NavigateUrl="https://www.sentosa.com.sg/" BackColor="White" BorderColor="#993333" ForeColor="#993333">Sentosa</asp:HyperLink>
         
     
              
@@ -250,20 +221,26 @@
         
     
          </p>
+        <div class="auto-style34">
+        </div>
+             <p class="auto-style22" style="border-color: #993333">
+        
+    
+             
+            
+        
+    
+                 &nbsp;</p>
          <p class="auto-style10" property="og:image" style="font-size: x-small">
              &nbsp;</p>
          <p>
-             <asp:HyperLink ID="HyperLink2" runat="server" CssClass="auto-style24" NavigateUrl="https://www.iss.nus.edu.sg/">Go and join us</asp:HyperLink>
-             </p>
-         <p>
-             <asp:Image ID="Image11" runat="server" CssClass="auto-style26" ImageUrl="~/Resources/AdImages/SingaporeAirline.jpg" />
-             </p>
-         <p class="auto-style28">
-             <asp:HyperLink ID="HyperLink3" runat="server" CssClass="auto-style27" NavigateUrl="http://www.singaporeairline.com">Singapore Airline</asp:HyperLink>
-             </p>
-         <p>
-             
              &nbsp;</p>
+         <p>
+             <asp:Image ID="Image11" runat="server" CssClass="auto-style26" ImageUrl="~/Resources/AdImages/NUS_ISS.jpg" />
+             2<asp:HyperLink ID="HyperLink3" runat="server" CssClass="newStyle10" ForeColor="#993333" NavigateUrl="https://www.iss.nus.edu.sg/" style="right: 388px; top: 519px; height: 64px; width: 174px">Come and join us</asp:HyperLink>
+       
+            <asp:Button ID="Button_Addtocart" runat="server" BackColor="#FFCC99" CssClass="newStyle8" ForeColor="Black" OnClick="Button_Addtocart_Click1" style="width: 197px" Text="Add to cart" />
+             </p>
         </div>
          <p>
              &nbsp;</p>
@@ -275,24 +252,9 @@
          </p>
          <p>
              &nbsp;</p>
-         <p class="auto-style9">
-             <asp:Button ID="Button1" runat="server" CssClass="auto-style16" Text="Add to cart" OnClick="Button_Addtocart_Click" style="margin-left: 0px" />
-             </p>
-         <p>
-             &nbsp;</p>
-         <p class="auto-style9">
-             <asp:Label ID="Label1" runat="server" CssClass="auto-style17" Text="Quantity"></asp:Label>
-             <asp:TextBox ID="TextBox_Quantity" runat="server" CssClass="auto-style13" TextMode="Number"></asp:TextBox></p>
-         <p class="newStyle3">
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </p>
-         <p class="auto-style10">
-            
-         </p>
-         <p>
-             &nbsp;</p>
+         
         <div class="auto-style10">
-            <asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal" CssClass="auto-style19" Height="342px" Width="431px">
+            <asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal" CssClass="auto-style19" Height="16px" Width="431px" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
                 <ItemTemplate>
                     <table class="auto-style12">
                         <tr>
@@ -305,10 +267,42 @@
                 </ItemTemplate>
                
             </asp:DataList>
+       
+            <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox_Quantity" CssClass="newStyle9" ErrorMessage="The quantity should within 1-50" ForeColor="#993333" MaximumValue="50" MinimumValue="1" style="top: 841px; left: 640px; width: 251px; height: 62px; margin-right: 0px" Type="Integer"></asp:RangeValidator>
+            <table font-size: medium  class="newStyle15"
+
+                 id="Table_BookDetails" align="center" style="position: absolute; top: 310px; left: 343px; height: 287px; width: 536px; font-size: small;">
+  <tr>
+    <th class="auto-style31" style="border-color: #993333; border-style: solid; background-color: #FFCC99;"  >Author:<asp:Label ID="Label_Author" runat="server" Text="Author" Font-Bold="False"></asp:Label>
+      </th> 
+  </tr>
+  <tr>
+    <td class="auto-style31" style="border-color: #993333; border-style: solid; background-color: #FFCC99;">Title&nbsp;&nbsp; <asp:Label ID="Label_Title" runat="server" Text="Title"></asp:Label>
+      </td> 
+  </tr>
+  <tr>
+    <td class="auto-style31" style="border-color: #993333; border-style: solid; background-color: #FFCC99;">Category:<asp:Label ID="Label_Category" runat="server" Text="Category"></asp:Label>
+      </td>
+  </tr>
+  <tr>
+    <td class="auto-style31" style="border-color: #993333; border-style: solid; background-color: #FFCC99;">ISBN number:<asp:Label ID="Label_ISBN" runat="server" Text="ISBN number"></asp:Label>
+      </td> 
+  </tr>
+    <tr>
+    <td class="auto-style31" style="border-color: #993333; border-style: solid; background-color: #FFCC99;">Price:<asp:Label ID="Label_Price" runat="server" Text="Price"></asp:Label>
+        </td> 
+  </tr>
+                <tr>
+    <td class="auto-style31" style="border-color: #993333; border-style: solid; background-color: #FFCC99;">Discount:<asp:Label ID="Label_Discount" runat="server" Text="Discount"></asp:Label>
+        </td> 
+  </tr>
+                <tr>
+    <td class="auto-style31" style="border-color: #993333; border-style: solid; background-color: #FFCC99;">Synopsis:<asp:Label ID="Label_Synopsis" runat="server" Text="Synopsis"></asp:Label>
+        </td> 
+  </tr>
+               
+
+</table>
             </div>
-        <div class="auto-style15">
-        </div>
-         <p class="auto-style10">
-             &nbsp;</p>
          </div>
 </asp:Content>

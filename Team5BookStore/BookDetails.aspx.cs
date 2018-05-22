@@ -27,10 +27,9 @@ namespace Team5BookStore
                     Label_Category.Text = b.Category.CategoryName;
                     Label_ISBN.Text = b.ISBN;
                     Label_Price.Text = b.Price.ToString();
-                    Label_Discount.Text = b.Price.ToString();
+                    Label_Discount.Text = b.DiscountedPrice.ToString();
                     Label_Synopsis.Text = b.Synopsis;
-                    Image1.ImageUrl = "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
-
+                    Image_BookImage.ImageUrl = "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
 
                     List<Book> list = BookModel.GetBooksByAuthor(b.Author);
                     DataList1.DataSource = list;
@@ -41,22 +40,25 @@ namespace Team5BookStore
         }
         protected string GenImageURL(object isbn)
                    => "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
-        protected void Button_Addtocart_Click(object sender, EventArgs e)
-        {
-
-            CartItemModel.AddToCart(Label_ISBN.Text, "Benjam62", Convert.ToInt32(TextBox_Quantity.Text));
-            Response.Write("<script LANGUAGE='JavaScript' >alert('Book added successful')</script>");
-    }
 
 
-    //protected string GenImageURL(object isbn)
-    //=> "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
 
     protected void image_Click(object sender, EventArgs eventArgs)
                 {
 
                     Response.Redirect("BookDetails.aspx");
                 }
-            }
+
+        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
+
+        protected void Button_Addtocart_Click1(object sender, EventArgs e)
+        {
+            CartItemModel.AddToCart(Label_ISBN.Text, "Benjam62", Convert.ToInt32(TextBox_Quantity.Text));
+            Response.Write("<script LANGUAGE='JavaScript' >alert('Book added successful')</script>");
+        }
+    }
+       }
     
