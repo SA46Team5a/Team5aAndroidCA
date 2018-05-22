@@ -30,7 +30,7 @@ namespace Team5BookStore.Models
 
 
         static public List<Book> GetBooksByAuthor(Author author)
-            => DiscountBooks(context.Books.Where(b => b.Author == author).ToList());
+            => DiscountBooks(context.Books.Where(b => b.Author.AuthorID == author.AuthorID).ToList());
 
 
         static public List<Book> SearchBooks(SearchFilter filter)
