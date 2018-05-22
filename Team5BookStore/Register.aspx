@@ -7,7 +7,7 @@
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="CreateUserWizard1" 
             ShowSummary="true" DisplayMode="BulletList" ForeColor="#CC0000" />
 
-            <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" >
+            <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser" >
                 <WizardSteps>
                     <asp:CreateUserWizardStep runat="server">
                         <ContentTemplate>
@@ -69,7 +69,7 @@
                                 </tr>
                                 <tr>
                                     <td align="right">
-                                        Address:</td>
+                                        Name:</td>
                                     <td>
                                         <asp:TextBox ID="Answer" runat="server" ValidationGroup="CreateUserWizard1"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="AnswerRequired" runat="server" ControlToValidate="Answer" ErrorMessage="Address is required." ToolTip="Security answer is required." ValidationGroup="CreateUserWizard1" Display="None">*</asp:RequiredFieldValidator>

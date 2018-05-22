@@ -10,6 +10,10 @@ namespace Team5BookStore
 {
     public partial class BookDetails : System.Web.UI.Page
     {
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            MasterPage.Picker(this);
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             string isbn = Session[Constants.ISBN].ToString();
@@ -25,7 +29,7 @@ namespace Team5BookStore
                     Label_Category.Text = b.Category.CategoryName;
                     Label_ISBN.Text = b.ISBN;
                     Label_Price.Text = b.Price.ToString();
-                    Label_Discount.Text = b.Price.ToString();
+                    Label_Discount.Text = b.DiscountedPrice.ToString();
                     Label_Synopsis.Text = b.Synopsis;
                     Image1.ImageUrl = "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
 
@@ -47,8 +51,7 @@ namespace Team5BookStore
         }
 
 
-    //protected string GenImageURL(object isbn)
-    //=> "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
+   
 
         protected void image_Click(object sender, EventArgs eventArgs)
                 {
