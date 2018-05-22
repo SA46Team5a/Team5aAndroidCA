@@ -11,5 +11,17 @@ namespace Team5BookStore.Models
     {
         [NotMapped]
         public decimal? DiscountedPrice { get; set; }
+        [NotMapped]
+        public int StockExcludingInCarts
+        {
+            get
+            {
+                int totalInCart = CartItems
+                    .Where(ci => !ci.Cart.CheckedOut)
+                    .Select(ci => ci.Quantity).ToList().Sum();
+
+                return StockLevel - totalInCart;
+            }
+        }
     }
 }
