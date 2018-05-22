@@ -327,6 +327,7 @@
       <DependentUpon>BookStoreModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserDetailModel.cs" />
+    <Compile Include="Models\UserDetailPartial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receipts.aspx.cs">
       <DependentUpon>Receipts.aspx</DependentUpon>
