@@ -142,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="BookDetails.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -163,10 +164,14 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="AllUsers.Master" />
+    <Content Include="AnonUsers.Master" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <EntityDeploy Include="Models\BookStoreModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BookStoreModels.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Login.aspx" />
     <Content Include="Models\BookStoreModels.edmx.diagram">
       <DependentUpon>BookStoreModels.edmx</DependentUpon>
     </Content>
@@ -181,7 +186,55 @@
       <DependentUpon>BookStoreModels.edmx</DependentUpon>
       <LastGenOutput>BookStoreModels.cs</LastGenOutput>
     </Content>
+    <Content Include="Register.aspx" />
     <Content Include="Resources\AdImages\ad_placeholder.gif" />
+    <Content Include="Resources\BookCovers\9780060555665.jpg" />
+    <Content Include="Resources\BookCovers\9780062377210.jpg" />
+    <Content Include="Resources\BookCovers\9780062390851.jpg" />
+    <Content Include="Resources\BookCovers\9780062498533.jpg" />
+    <Content Include="Resources\BookCovers\9780262035613.jpg" />
+    <Content Include="Resources\BookCovers\9780307279187.jpg" />
+    <Content Include="Resources\BookCovers\9780316468978.jpg" />
+    <Content Include="Resources\BookCovers\9780374300210.jpg" />
+    <Content Include="Resources\BookCovers\9780385376716.jpg" />
+    <Content Include="Resources\BookCovers\9780385537353.jpg" />
+    <Content Include="Resources\BookCovers\9780399255373.jpg" />
+    <Content Include="Resources\BookCovers\9780399588174.jpg" />
+    <Content Include="Resources\BookCovers\9780425285176.jpg" />
+    <Content Include="Resources\BookCovers\9780544633384.jpg" />
+    <Content Include="Resources\BookCovers\9780691135144.jpg" />
+    <Content Include="Resources\BookCovers\9780691169019.jpg" />
+    <Content Include="Resources\BookCovers\9780735214149.jpg" />
+    <Content Include="Resources\BookCovers\9780744017311.jpg" />
+    <Content Include="Resources\BookCovers\9780803741713.jpg" />
+    <Content Include="Resources\BookCovers\9780812988406.jpg" />
+    <Content Include="Resources\BookCovers\9780812995800.jpg" />
+    <Content Include="Resources\BookCovers\9780812996937.jpg" />
+    <Content Include="Resources\BookCovers\9780984782857.jpg" />
+    <Content Include="Resources\BookCovers\9780997584714.jpg" />
+    <Content Include="Resources\BookCovers\9781101875681.jpg" />
+    <Content Include="Resources\BookCovers\9781101904404.jpg" />
+    <Content Include="Resources\BookCovers\9781119144755.jpg" />
+    <Content Include="Resources\BookCovers\9781119259756.jpg" />
+    <Content Include="Resources\BookCovers\9781259589515.jpg" />
+    <Content Include="Resources\BookCovers\9781419721373.jpg" />
+    <Content Include="Resources\BookCovers\9781442468405.jpg" />
+    <Content Include="Resources\BookCovers\9781476763828.jpg" />
+    <Content Include="Resources\BookCovers\9781484732748.jpg" />
+    <Content Include="Resources\BookCovers\9781484746424.jpg" />
+    <Content Include="Resources\BookCovers\9781491962299.jpg" />
+    <Content Include="Resources\BookCovers\9781497644892.jpg" />
+    <Content Include="Resources\BookCovers\9781501163807.jpg" />
+    <Content Include="Resources\BookCovers\9781506703350.jpg" />
+    <Content Include="Resources\BookCovers\9781506703671.jpg" />
+    <Content Include="Resources\BookCovers\9781506705408.jpg" />
+    <Content Include="Resources\BookCovers\9781524766498.jpg" />
+    <Content Include="Resources\BookCovers\9781535585958.jpg" />
+    <Content Include="Resources\BookCovers\9781589795471.jpg" />
+    <Content Include="Resources\BookCovers\9781593276034.jpg" />
+    <Content Include="Resources\BookCovers\9781616205676.jpg" />
+    <Content Include="Resources\BookCovers\9781619634480.jpg" />
+    <Content Include="Resources\BookCovers\9781911015222.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -210,11 +263,10 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="Site.Master" />
+    <Content Include="Test_M1.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
-    <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -226,6 +278,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BookDetails.aspx.cs">
+      <DependentUpon>BookDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookDetails.aspx.designer.cs">
+      <DependentUpon>BookDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Constants.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -244,6 +303,27 @@
     <Compile Include="Exceptions\InvalidObjectParams.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="AnonUsers.Master.cs">
+      <DependentUpon>AnonUsers.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnonUsers.Master.designer.cs">
+      <DependentUpon>AnonUsers.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AllUsers.Master.cs">
+      <DependentUpon>AllUsers.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllUsers.Master.designer.cs">
+      <DependentUpon>AllUsers.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Advertisement.cs">
       <DependentUpon>BookStoreModels.tt</DependentUpon>
@@ -291,21 +371,23 @@
       <DependentUpon>BookStoreModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.Master.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.Master.designer.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Site.Mobile.Master.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    <Compile Include="Test_M1.aspx.cs">
+      <DependentUpon>Test_M1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.Mobile.Master.designer.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    <Compile Include="Test_M1.aspx.designer.cs">
+      <DependentUpon>Test_M1.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
@@ -314,7 +396,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Owner\" />
-    <Folder Include="Resources\BookCovers\" />
     <Folder Include="User\" />
   </ItemGroup>
   <ItemGroup>

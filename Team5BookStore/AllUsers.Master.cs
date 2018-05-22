@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Team5BookStore
 {
-    public partial class SiteMaster : MasterPage
+    public partial class AllUsers : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
