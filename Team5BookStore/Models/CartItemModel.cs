@@ -68,7 +68,7 @@ namespace Team5BookStore.Models
         {
             Cart cart = CartModel.GetOpenCart(user);
             List<CartItem> cartItems = context.CartItems.Where(ci => ci.Cart == cart).ToList();
-            BookModel.DiscountBooks(cartItems.Select(ci => ci.Book).ToList());
+            cartItems.Select(ci => ci.Book).ToList();
             return cartItems;
         }
     }
