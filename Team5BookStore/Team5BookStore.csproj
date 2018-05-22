@@ -167,11 +167,13 @@
     </Content>
     <Content Include="AllUsers.Master" />
     <Content Include="AnonUsers.Master" />
+    <None Include="packages.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <EntityDeploy Include="Models\BookStoreModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BookStoreModels.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Login.aspx" />
     <Content Include="Models\BookStoreModels.edmx.diagram">
       <DependentUpon>BookStoreModels.edmx</DependentUpon>
     </Content>
@@ -240,6 +242,7 @@
     <Content Include="Resources\BookCovers\9781616205676.jpg" />
     <Content Include="Resources\BookCovers\9781619634480.jpg" />
     <Content Include="Resources\BookCovers\9781911015222.jpg" />
+    <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -323,6 +326,13 @@
     </Compile>
     <Compile Include="AllUsers.Master.designer.cs">
       <DependentUpon>AllUsers.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Advertisement.cs">
       <DependentUpon>BookStoreModels.tt</DependentUpon>
