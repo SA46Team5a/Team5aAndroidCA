@@ -313,6 +313,7 @@
       <DependentUpon>BookStoreModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CartItemModel.cs" />
+    <Compile Include="Models\CartItemPartial.cs" />
     <Compile Include="Models\Category.cs">
       <DependentUpon>BookStoreModels.tt</DependentUpon>
     </Compile>

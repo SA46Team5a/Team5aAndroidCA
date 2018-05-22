@@ -17,6 +17,8 @@ namespace Team5BookStore
                 BookStoreEntities context = BookStoreEntities.Instance;
                 GridView1.DataSource = context.CartItems.ToList();
                 GridView1.DataBind();
+                DetailsView1.DataSource = context.UserDetails.ToList();
+                DetailsView1.DataBind();
             }
         }
     }
