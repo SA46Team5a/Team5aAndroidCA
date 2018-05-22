@@ -1,9 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AnonUsers.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Team5BookStore.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
-    
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
+  <style>
+        .center{
+            text-align:center;
+        }
+    </style>
+    <div class="center" style="align-content:center">
+   
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Login1" 
             ShowSummary="true" DisplayMode="BulletList" ForeColor="#CC0000" />
 
