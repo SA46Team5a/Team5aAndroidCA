@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Team5BookStore.Models
 {
@@ -14,8 +15,13 @@ namespace Team5BookStore.Models
             UserDetail newUser = new UserDetail
             {
                 UserName = username,
-                Email = email
+                Email = email,
+                Name = name,
+                ContactNumber = contact
             };
+
+            context.UserDetails.Add(newUser);
+            context.SaveChanges();
         }
     }
 }

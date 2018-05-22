@@ -144,6 +144,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="BookDetails.aspx" />
+    <Content Include="BookListing.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -167,11 +168,17 @@
     </Content>
     <Content Include="AllUsers.Master" />
     <Content Include="AnonUsers.Master" />
+    <Content Include="WebForm1.aspx" />
+    <None Include="packages.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <EntityDeploy Include="Models\BookStoreModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BookStoreModels.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Login.aspx" />
+    <Content Include="Receipts.aspx" />
+    <Content Include="Resources\images\ShoppingCartLogo.png" />
+    <Content Include="Resources\images\5a553a3fedcceab89d2a2de5.png" />
     <Content Include="Models\BookStoreModels.edmx.diagram">
       <DependentUpon>BookStoreModels.edmx</DependentUpon>
     </Content>
@@ -240,6 +247,7 @@
     <Content Include="Resources\BookCovers\9781616205676.jpg" />
     <Content Include="Resources\BookCovers\9781619634480.jpg" />
     <Content Include="Resources\BookCovers\9781911015222.jpg" />
+    <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -268,6 +276,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Signout.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -290,6 +299,13 @@
     </Compile>
     <Compile Include="BookDetails.aspx.designer.cs">
       <DependentUpon>BookDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookListing.aspx.cs">
+      <DependentUpon>BookListing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookListing.aspx.designer.cs">
+      <DependentUpon>BookListing.aspx</DependentUpon>
     </Compile>
     <Compile Include="Constants.cs" />
     <Compile Include="Contact.aspx.cs">
@@ -323,6 +339,13 @@
     </Compile>
     <Compile Include="AllUsers.Master.designer.cs">
       <DependentUpon>AllUsers.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Advertisement.cs">
       <DependentUpon>BookStoreModels.tt</DependentUpon>
@@ -374,12 +397,23 @@
     <Compile Include="Models\UserDetailModel.cs" />
     <Compile Include="Models\UserDetailPartial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receipts.aspx.cs">
+      <DependentUpon>Receipts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
+    <Compile Include="Receipts.aspx.designer.cs">
+      <DependentUpon>Receipts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Signout.aspx.cs">
+      <DependentUpon>Signout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signout.aspx.designer.cs">
+      <DependentUpon>Signout.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
@@ -387,6 +421,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -418,7 +459,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52221</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

@@ -12,7 +12,7 @@ namespace Team5BookStore
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string isbn = "9780062390851";
+            string isbn = Session[Constants.ISBN].ToString();
 
             if (!IsPostBack)
             {
