@@ -13,7 +13,7 @@ namespace Team5BookStore.Models
         {
             get
             {
-                return Carts.Last().CartItems.Select(ci => ci.FinalPrice).Sum();
+                return CartItemModel.GetCheckedOutCart(UserName).Select(c => c.TotalPrice).ToList().Sum();
             }
         }
     }

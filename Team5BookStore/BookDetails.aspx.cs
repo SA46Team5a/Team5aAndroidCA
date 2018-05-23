@@ -19,8 +19,6 @@ namespace Team5BookStore
                 // Session[Constants.ISBN].ToString();
                 if (isbn != null)
                 {
-
-               
                     Book b = BookModel.GetBookByISBN(isbn);
                     Label_Author.Text = b.Author.AuthorName;
                     Label_Title.Text = b.Title;
@@ -43,16 +41,16 @@ namespace Team5BookStore
                    => "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
         protected void Button_Addtocart_Click(object sender, EventArgs e)
         {
-
-            CartItemModel.AddToCart(Label_ISBN.Text, "Benjam62", Convert.ToInt32(TextBox_Quantity.Text));
+            
+            CartItemModel.AddToCart(Label_ISBN.Text, Session[Constants.USER_ID].ToString(), Convert.ToInt32(TextBox_Quantity.Text));
             Response.Write("<script LANGUAGE='JavaScript' >alert('Book added successful')</script>");
-    }
+        }
 
 
     //protected string GenImageURL(object isbn)
     //=> "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
 
-    protected void image_Click(object sender, EventArgs eventArgs)
+        protected void image_Click(object sender, EventArgs eventArgs)
                 {
 
                     Response.Redirect("BookDetails.aspx");
