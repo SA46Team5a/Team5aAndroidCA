@@ -13,7 +13,10 @@ namespace Team5BookStore.Models
         {
             get
             {
-                return Book.DiscountedPrice is null ? Book.Price : Book.DiscountedPrice;
+                return 
+                    Math.Round(
+                        (decimal)(Book.DiscountedPrice is null ? Book.Price : Book.DiscountedPrice),
+                        2);
             }
         }
 
