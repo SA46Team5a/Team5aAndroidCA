@@ -11,7 +11,15 @@ namespace Team5BookStore
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+            }
+        }
 
+        protected void LoginButton_Click(object sender, EventArgs e)
+        {
+            Session[Constants.USER_ID] = Login1.UserName;
+            Response.Redirect("~/BookListing.aspx");
         }
     }
 }

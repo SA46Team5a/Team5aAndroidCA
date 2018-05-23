@@ -24,6 +24,7 @@ namespace Team5BookStore
             string sContact = CreateUserWizard1.Question;
             UserDetailModel.AddNewUser(sUsername,sEmail,sName,sContact);
             Response.Write("<script LANGUAGE='JavaScript' >alert('User registered successfully')</script>");
+            Response.Redirect("~/Login.aspx");
         }
     }
 }
