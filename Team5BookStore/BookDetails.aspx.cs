@@ -12,15 +12,14 @@ namespace Team5BookStore
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string isbn = Session[Constants.ISBN].ToString();
+           String isbn=Session[Constants.ISBN].ToString();
 
-            if (!IsPostBack)
-            {
-                // Session[Constants.ISBN].ToString();
+
+            //if (!IsPostBack)
+            //{
+               // Session[Constants.ISBN].ToString();
                 if (isbn != null)
                 {
-
-               
                     Book b = BookModel.GetBookByISBN(isbn);
                     Label_Author.Text = b.Author.AuthorName;
                     Label_Title.Text = b.Title;
@@ -29,13 +28,13 @@ namespace Team5BookStore
                     Label_Price.Text = b.Price.ToString();
                     Label_Discount.Text = b.DiscountedPrice.ToString();
                     Label_Synopsis.Text = b.Synopsis;
-                    Image_BookImage.ImageUrl = "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
+                   Image_BookImage.ImageUrl = "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
 
-                    List<Book> list = BookModel.GetBooksByAuthor(b.Author);
+                    List<Book> list = BookModel.GetBooksByCategory(b.Category);
                     DataList1.DataSource = list;
                     DataList1.DataBind();
                    
-                }
+                //}
             }
         }
         protected string GenImageURL(object isbn)
@@ -43,21 +42,31 @@ namespace Team5BookStore
 
 
 
-    protected void image_Click(object sender, EventArgs eventArgs)
-                {
+        protected void image_Click(object sender, EventArgs eventArgs)
+        {
+            Session[Constants.ISBN] = ((ImageButton)sender).Attributes["Value"];
+            Response.Redirect("BookDetails.aspx");
+           
+        }
 
-                    Response.Redirect("BookDetails.aspx");
-                }
-
-        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
+            protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
         protected void Button_Addtocart_Click1(object sender, EventArgs e)
         {
-            CartItemModel.AddToCart(Label_ISBN.Text, "Benjam62", Convert.ToInt32(TextBox_Quantity.Text));
-            Response.Write("<script LANGUAGE='JavaScript' >alert('Book added successful')</script>");
+            if (Session[Constants.USER_ID] is null)
+            { 
+                Session[Constants.REDIRECT_BOOK] = Label_ISBN.Text;
+                Response.Redirect("~/Login.aspx");
+            }
+            else
+            { 
+                CartItemModel.AddToCart(Label_ISBN.Text, Session[Constants.USER_ID].ToString(), Convert.ToInt32(TextBox_Quantity.Text));
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Book added successful')</script>");
+                TextBox_Quantity.Text = "";
+            }
         }
     }
        }

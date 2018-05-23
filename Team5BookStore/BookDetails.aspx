@@ -32,10 +32,10 @@
         }
         .auto-style8 {
             position: absolute;
-            left: 254px;
+            left: 270px;
             top: -5px;
-            width: 176px;
-            height: 223px;
+            width: 160px;
+            height: 111px;
         }
      
         h1 {
@@ -47,18 +47,18 @@
         }
         .auto-style17 {
             position: absolute;
-            left: 470px;
-            top: -355px;
-            height: 40px;
-            width: 138px;
+            left: 334px;
+            top: -400px;
+            height: 37px;
+            width: 105px;
             margin-right: 0px;
         }
         .auto-style13 {
             position: absolute;
-            left: 627px;
-            top: -364px;
-            height: 39px;
-            width: 187px;
+            left: 480px;
+            top: -400px;
+            height: 38px;
+            width: 105px;
             margin-bottom: 0px;
              border: solid #07839f;
                     -webkit-border-radius: 10px;
@@ -98,11 +98,11 @@
         }
         .auto-style23 {
             position: absolute;
-            left: 277px;
-            top: 242px;
-            height: 34px;
-            width: 85px;
-            bottom: 632px;
+            left: 320px;
+            top: 128px;
+            height: 38px;
+            width: 129px;
+            bottom: 526px;
         }
         .h1 {
             position: absolute;
@@ -118,17 +118,17 @@
         .auto-style25 {
             position: absolute;
             left: 35px;
-            top: -383px;
-            height: 89px;
+            top: -318px;
+            height: 64px;
             width: 181px;
         }
        
         .auto-style26 {
             position: absolute;
-            left: 257px;
-            top: 320px;
-            width: 175px;
-            height: 167px;
+            left: 269px;
+            top: 212px;
+            width: 169px;
+            height: 115px;
         }
        
         .auto-style27 {
@@ -159,6 +159,50 @@
         }
        
       
+        .newStyle11 {
+            position: absolute;
+        }
+        .newStyle12 {
+            position: absolute;
+        }
+        .auto-style32 {
+            position: absolute;
+            left: 342px;
+            top: 310px;
+            height: 258px;
+            width: 503px;
+        }
+        .auto-style33 {
+            position: absolute;
+            top: 354px;
+            left: -25px;
+            height: 49px;
+            width: 180px;
+            text-align: left;
+        }
+        .auto-style34 {
+            position: absolute;
+            right: 388px;
+            top: 359px;
+            height: 224px;
+            width: 174px;
+        }
+        .auto-style35 {
+            position: absolute;
+            right: 348px;
+            top: 359px;
+            height: 90px;
+            width: 184px;
+        }
+        .auto-style36 {
+            position: absolute;
+            top: 414px;
+            left: -25px;
+            width: 180px;
+            height: 64px;
+        }
+       
+      
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -185,7 +229,7 @@
         <p aria-autocomplete="both" style="margin-top: 19px">
 
              </br>
-            <asp:Label  ID="Label_Recommendedbooks" ForeColor="#993300" Font-Bold="true" Font-Size="Larger" Font-Italic="true"  runat="server" CssClass="auto-style25" Text="Recommended books"></asp:Label>
+            <asp:Label  ID="Label_Recommendedbooks" ForeColor="#993300" Font-Bold="True" Font-Size="Medium" Font-Italic="True"  runat="server" CssClass="auto-style25" Text="Recommended books"></asp:Label>
             </p>
          <p aria-autocomplete="both" class="auto-style7" style="margin-top: 19px">
              &nbsp;</p>
@@ -206,7 +250,7 @@
         
     
              <asp:Image ID="Image10" runat="server" ImageUrl="~/Resources/AdImages/Sentosa.jpg" CssClass="auto-style8" />
-             <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style23" NavigateUrl="https://www.sentosa.com.sg/" BackColor="White" BorderColor="#993333" ForeColor="#993333">Sentosa</asp:HyperLink>
+             <asp:HyperLink ID="HyperLink1" runat="server" CssClass="auto-style23" NavigateUrl="https://www.sentosa.com.sg/" BackColor="White" BorderColor="#993333" ForeColor="#993333" Font-Size="Small" Font-Underline="True">Sentosa</asp:HyperLink>
         
     
              
@@ -236,10 +280,12 @@
          <p>
              &nbsp;</p>
          <p>
-             <asp:Image ID="Image11" runat="server" CssClass="auto-style26" ImageUrl="~/Resources/AdImages/NUS_ISS.jpg" />
-             2<asp:HyperLink ID="HyperLink3" runat="server" CssClass="newStyle10" ForeColor="#993333" NavigateUrl="https://www.iss.nus.edu.sg/" style="right: 388px; top: 519px; height: 64px; width: 174px">Come and join us</asp:HyperLink>
+             2<asp:HyperLink ID="HyperLink3" runat="server" CssClass="auto-style35" ForeColor="#993333" NavigateUrl="https://www.iss.nus.edu.sg/" Font-Size="Small" Font-Underline="True">Come and join us</asp:HyperLink>
        
-            <asp:Button ID="Button_Addtocart" runat="server" BackColor="#FFCC99" CssClass="newStyle8" ForeColor="Black" OnClick="Button_Addtocart_Click1" style="width: 197px" Text="Add to cart" />
+            <asp:Button ID="Button_Addtocart" runat="server" BackColor="#FFCC99" CssClass="auto-style33" ForeColor="#993333" OnClick="Button_Addtocart_Click1" Text="Add to cart" BorderStyle="Solid" BorderWidth="3px" />
+             <asp:Image ID="Image11" runat="server" CssClass="auto-style26" ImageUrl="~/Resources/AdImages/NUS_ISS.jpg" />
+       
+            <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox_Quantity" CssClass="auto-style36" ErrorMessage="The quantity should within 1-50" ForeColor="#993333" MaximumValue="50" MinimumValue="1" style="margin-right: 0px" Type="Integer" Font-Size="Small"></asp:RangeValidator>
              </p>
         </div>
          <p>
@@ -254,11 +300,11 @@
              &nbsp;</p>
          
         <div class="auto-style10">
-            <asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal" CssClass="auto-style19" Height="16px" Width="431px" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
+            <asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal" CssClass="auto-style19" Height="16px" Width="431px" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" EnableViewState="False">
                 <ItemTemplate>
                     <table class="auto-style12">
                         <tr>
-                            <td><asp:ImageButton runat="server" ID="ThumbNail" ImageURL='<%# GenImageURL(Eval("ISBN").ToString()) %>' width="100" height="110" OnClick="image_Click"/></td>
+                            <td><asp:ImageButton runat="server" ID="ThumbNail" ImageURL='<%# GenImageURL(Eval("ISBN").ToString()) %>'  width="100" height="110" OnClick="image_Click" Value='<%#Eval("ISBN") %>'/></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -268,10 +314,9 @@
                
             </asp:DataList>
        
-            <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox_Quantity" CssClass="newStyle9" ErrorMessage="The quantity should within 1-50" ForeColor="#993333" MaximumValue="50" MinimumValue="1" style="top: 841px; left: 640px; width: 251px; height: 62px; margin-right: 0px" Type="Integer"></asp:RangeValidator>
-            <table font-size: medium  class="newStyle15"
+            <table font-size: medium  class="auto-style32"
 
-                 id="Table_BookDetails" align="center" style="position: absolute; top: 310px; left: 343px; height: 287px; width: 536px; font-size: small;">
+                 id="Table_BookDetails" align="center" style="font-size: x-small;">
   <tr>
     <th class="auto-style31" style="border-color: #993333; border-style: solid; background-color: #FFCC99;"  >Author:<asp:Label ID="Label_Author" runat="server" Text="Author" Font-Bold="False"></asp:Label>
       </th> 

@@ -31,7 +31,7 @@ namespace Team5BookStore.Models
                     {
                         discountPercent *= discount.DiscountPercent;
                     }
-                    return Price * discountPercent / 100;
+                    return Price * (100 - discountPercent) /100;
                 }
                 else
                     return null;

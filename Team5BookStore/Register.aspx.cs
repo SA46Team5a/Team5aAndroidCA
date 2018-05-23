@@ -13,5 +13,10 @@ namespace Team5BookStore
         {
 
         }
+
+        protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
+        {
+
+        }
     }
 }

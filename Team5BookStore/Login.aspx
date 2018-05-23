@@ -2,25 +2,65 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
-  <style>
+    <style>
         .center{
             text-align:center;
         }
+        .newStyle1 {
+            position: absolute;
+        }
+        .newStyle2 {
+            position: absolute;
+        }
+        .auto-style9 {
+            position: absolute;
+            left: 321px;
+            top: 116px;
+            width: 494px;
+            height: 297px;
+            right: 358px;
+        }
+        .newStyle3 {
+            position: absolute;
+        }
+        .auto-style10 {
+            position: absolute;
+            left: 790px;
+            top: 181px;
+            width: 355px;
+            height: 82px;
+        }
+        .auto-style12 {
+            width: 483px;
+            height: 214px;
+        }
+        .newStyle4 {
+            position: absolute;
+        }
+        .newStyle5 {
+            position: absolute;
+        }
+        .auto-style13 {
+            position: absolute;
+            height: 61px;
+        }
     </style>
     <div class="center" style="align-content:center">
+        <h1>Log in</h1>
    
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Login1" 
-            ShowSummary="true" DisplayMode="BulletList" ForeColor="#CC0000" />
-
+            ShowSummary="true" DisplayMode="BulletList" ForeColor="#CC0000" CssClass="auto-style10" />
  
-    <asp:Login ID="Login1" runat="server" Width="374px">
+    <asp:Login ID="Login1" runat="server" CssClass="auto-style9">
         <LayoutTemplate>
             <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
                 <tr>
                     <td>
-                        <table cellpadding="0" style="width:374px;">
+                        <table cellpadding="0" class="auto-style12">
                             <tr>
-                                <td align="center" colspan="2">Log In</td>
+                                <td colspan="2" class="auto-style13">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                     </td>
                             </tr>
                             <tr>
                                 <td align="right">

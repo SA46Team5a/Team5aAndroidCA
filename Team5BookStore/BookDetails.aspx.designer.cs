@@ -67,15 +67,6 @@ namespace Team5BookStore {
         protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
         
         /// <summary>
-        /// Image11 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image11;
-        
-        /// <summary>
         /// HyperLink3 control.
         /// </summary>
         /// <remarks>
@@ -94,13 +85,13 @@ namespace Team5BookStore {
         protected global::System.Web.UI.WebControls.Button Button_Addtocart;
         
         /// <summary>
-        /// DataList1 control.
+        /// Image11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DataList1;
+        protected global::System.Web.UI.WebControls.Image Image11;
         
         /// <summary>
         /// RangeValidator1 control.
@@ -110,6 +101,15 @@ namespace Team5BookStore {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RangeValidator RangeValidator1;
+        
+        /// <summary>
+        /// DataList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList DataList1;
         
         /// <summary>
         /// Label_Author control.
