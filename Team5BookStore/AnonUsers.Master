@@ -100,7 +100,7 @@
                     <strong>
            
 
-                <asp:Button ID = "Login" CssClass="auto-style8" runat ="server" BackColor="#66CCFF" BorderColor="#009999" BoderWidth="1px" Font-Names="Arial Rounded MT Bold" Height="25px" Text="Login" Width="105px" style="float: right"/>
+                <asp:Button ID = "Login" CssClass="auto-style8" runat ="server" BackColor="#66CCFF" BorderColor="#009999" BoderWidth="1px" Font-Names="Arial Rounded MT Bold" Height="25px" Text="Login" Width="105px" style="float: right" OnClick="Login_Click"/>
 
                  <asp:Button ID="Register" runat="server" Text="Register" OnClick="Register_Click" BackColor="#66CCFF" BorderColor="#009999" BorderWidth="1px" CssClass="auto-style8" Font-Names="Arial Rounded MT Bold" Height="25px" Width="105px" style="float: right"/>
 

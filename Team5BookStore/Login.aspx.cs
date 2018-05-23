@@ -7,13 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Team5BookStore
 {
-	public partial class Login : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+    public partial class Login : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
-		}
-
-       
+        }
     }
 }
