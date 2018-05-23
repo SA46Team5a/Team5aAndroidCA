@@ -99,9 +99,11 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="right" style="font-weight: bold">
-                                        Address:</td>
+
+                                    <td align="right" style="font-weight: bold"
+                                        Name:</td>
                                     <td class="auto-style13">
+
                                         <asp:TextBox ID="Answer" runat="server" ValidationGroup="CreateUserWizard1"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="AnswerRequired" runat="server" ControlToValidate="Answer" ErrorMessage="Address is required." ToolTip="Security answer is required." ValidationGroup="CreateUserWizard1" Display="None">*</asp:RequiredFieldValidator>
                                     </td>

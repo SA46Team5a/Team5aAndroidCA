@@ -82,7 +82,7 @@
         <div>            
              <div class="navbar navbar-default">
                 <div class="Logo" style="background-color: #FF9933; color: #FFFFFF; font-style: italic; text-transform: capitalize; font-variant: normal; font-weight: bold; font-size: large; vertical-align: middle; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                    <a href="http://localhost:52814/m2.aspx" style="background-color: #FF9933">                   
+                    <a href="BookListing.aspx" style="background-color: #FF9933">                   
                     <img src="http://www.eatlogos.com/education_logos/png/m-letter-with-book-logo-design.png" class="auto-style2" style="background-color: #FF9933" />
                         
 
@@ -93,7 +93,7 @@
                     <div class="dropdown" style="float:right">
                           <button class="dropbtn" style="color: #000000; background-color: #6699FF; font-weight: normal;">Account</button>
                           <div class="dropdown-content">
-                          <a href="http://localhost:52814/Login.aspx">Sign Out</a>
+                          <a href="Signout.aspx">Sign Out</a>
                           <a href="#">Link 2</a>
                           <a href="#">Link 3</a>
                           </div>

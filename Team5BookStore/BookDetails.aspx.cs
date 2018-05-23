@@ -10,6 +10,10 @@ namespace Team5BookStore
 {
     public partial class BookDetails : System.Web.UI.Page
     {
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            MasterPageFile = MasterPagePicker.Picker(this);
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
            String isbn=Session[Constants.ISBN].ToString();
@@ -39,8 +43,6 @@ namespace Team5BookStore
         }
         protected string GenImageURL(object isbn)
                    => "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
-
-
 
         protected void image_Click(object sender, EventArgs eventArgs)
         {
