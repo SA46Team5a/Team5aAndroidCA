@@ -12,7 +12,7 @@ namespace Team5BookStore
     {
         protected void Page_PreInit(object sender, EventArgs e)
         {
-            MasterPage.Picker(this);
+            MasterPagePicker.Picker(this);
         }
         protected void Page_Load(object sender, EventArgs e)
         {

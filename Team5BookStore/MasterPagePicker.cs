@@ -7,7 +7,7 @@ using System.Web.UI;
 
 namespace Team5BookStore
 {
-    public class MasterPage
+    public static class MasterPagePicker
     {
         public static void Picker(Page page)
         {
