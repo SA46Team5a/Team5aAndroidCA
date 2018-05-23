@@ -16,13 +16,14 @@ namespace Team5BookStore
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-           String isbn=Session[Constants.ISBN].ToString();
-
+            //String isbn=Session[Constants.ISBN].ToString();
+            string isbn = "9781484746424";
 
             //if (!IsPostBack)
             //{
-               // Session[Constants.ISBN].ToString();
-                if (isbn != null)
+            // Session[Constants.ISBN].ToString();
+
+            if (isbn != null)
                 {
                     Book b = BookModel.GetBookByISBN(isbn);
                     Label_Author.Text = b.Author.AuthorName;
