@@ -83,7 +83,7 @@
              <div class="navbar navbar-default">
                  <div class="container-fluid" style="background-color: #FF9933; background-repeat: repeat; background-attachment: fixed">
             
-                     <a href="http://localhost:52814/Login.aspx" style="background-color: #FF9933; background-repeat: repeat; background-attachment: fixed">                   
+                     <a href="BookListing.aspx" style="background-color: #FF9933; background-repeat: repeat; background-attachment: fixed">                   
                     &nbsp;<img src="http://www.eatlogos.com/education_logos/png/m-letter-with-book-logo-design.png" class="auto-style2" style="background-color: #FF9933" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                      <asp:TextBox placeholder="Search all books " ID="TextBox1" CssClass="txtbx" runat="server" Height="25px" Width="350px" Rows="0" style="align-items:center" text-align="center" />
                      </asp:TextBox>

@@ -9,12 +9,12 @@ namespace Team5BookStore
 {
     public static class MasterPagePicker
     {
-        public static void Picker(Page page)
+        public static string Picker(Page page)
         {
-            if (page.Session["UserName"] != null)
-                page.MasterPageFile = "~/AllUsers.Master";
+            if (page.Session[Constants.USER_ID] != null)
+                return "~/AllUsers.Master";
             else
-                page.MasterPageFile = "~/AnonUsers.Master";
+                return "~/AnonUsers.Master";
         }
       
     }
