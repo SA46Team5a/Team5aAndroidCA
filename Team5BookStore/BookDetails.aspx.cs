@@ -12,34 +12,28 @@ namespace Team5BookStore
     {
         protected void Page_PreInit(object sender, EventArgs e)
         {
-            MasterPageFile = MasterPagePicker.Picker(this);
+            MasterPagePicker.Picker(this);
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            //String isbn=Session[Constants.ISBN].ToString();
-            string isbn = "9781484746424";
-
-            //if (!IsPostBack)
-            //{
-            // Session[Constants.ISBN].ToString();
+            String isbn = Session[Constants.ISBN].ToString();
+            //string isbn = "9781484746424";
 
             if (isbn != null)
-                {
-                    Book b = BookModel.GetBookByISBN(isbn);
-                    Label_Author.Text = b.Author.AuthorName;
-                    Label_Title.Text = b.Title;
-                    Label_Category.Text = b.Category.CategoryName;
-                    Label_ISBN.Text = b.ISBN;
-                    Label_Price.Text = b.Price.ToString();
-                    Label_Discount.Text = b.DiscountedPrice.ToString();
-                    Label_Synopsis.Text = b.Synopsis;
-                   Image_BookImage.ImageUrl = "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
+            {
+                Book b = BookModel.GetBookByISBN(isbn);
+                Label_Author.Text = b.Author.AuthorName;
+                Label_Title.Text = b.Title;
+                Label_Category.Text = b.Category.CategoryName;
+                Label_ISBN.Text = b.ISBN;
+                Label_Price.Text = b.Price.ToString();
+                Label_Discount.Text = b.DiscountedPrice.ToString();
+                Label_Synopsis.Text = b.Synopsis;
+                Image_BookImage.ImageUrl = "~/Resources/BookCovers/" + isbn.ToString() + ".jpg";
 
-                    List<Book> list = BookModel.GetBooksByCategory(b.Category);
-                    DataList1.DataSource = list;
-                    DataList1.DataBind();
-                   
-                //}
+                List<Book> list = BookModel.GetBooksByCategory(b.Category);
+                DataList1.DataSource = list;
+                DataList1.DataBind();
             }
         }
         protected string GenImageURL(object isbn)

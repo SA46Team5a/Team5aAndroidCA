@@ -6,13 +6,13 @@
 <head runat="server">
     <title></title>
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
@@ -27,40 +27,40 @@
             display: flex;
             flex-direction: row;
         }
-        
-        
-                .txtbx {
-                    border: 2px solid #07839f;
-                    -webkit-border-radius: 10px;
-                    -moz-border-radius: 10px;                   
-                    border-radius: 10px;
-                }
 
-                .bttn {
-                    border: solid #07839f;
-                    -webkit-border-radius: 10px;
-                    -moz-border-radius: 10px;                  
-                    border-radius: 10px;
-                }
-           
-                .center {
-    text-align: center;
-    
-}
+
+        .txtbx {
+            border: 2px solid #07839f;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        .bttn {
+            border: solid #07839f;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
         .auto-style5 {
             text-align: center;
             height: 84px;
         }
 
-      #main
-      {
-          background-color:antiquewhite;
-      }
+        #main {
+            background-color: antiquewhite;
+        }
 
 
         .auto-style6 {
             height: 57px;
         }
+
         .auto-style7 {
             height: 181px;
         }
@@ -73,66 +73,47 @@
             border-radius: 10px;
             font-weight: bold;
         }
-
-
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">       
-      
-             <div class="navbar navbar-default">
-                 <div class="container-fluid" style="background-color: #FF9933; background-repeat: repeat; background-attachment: fixed">
-            
+    <form id="form1" runat="server">
 
-                     <a href="BookListing.aspx" style="background-color: #FF9933; background-repeat: repeat; background-attachment: fixed">                   
-                    &nbsp;<img src="http://www.eatlogos.com/education_logos/png/m-letter-with-book-logo-design.png" class="auto-style2" style="background-color: #FF9933" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="navbar navbar-default">
+            <div class="container-fluid" style="background-color: #FF9933; background-repeat: repeat; background-attachment: fixed">
+
+
+                <a href="BookListing.aspx" style="background-color: #FF9933; background-repeat: repeat; background-attachment: fixed">&nbsp;<img src="http://www.eatlogos.com/education_logos/png/m-letter-with-book-logo-design.png" class="auto-style2" style="background-color: #FF9933" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                      <h1 style="position: absolute; top: 7px; left: 413px; color: #FFFFFF; font-style: italic;">Welcome to ISS Book Store</h1>
-               
+
 
                 <div class="Navigation" style="background-color: #808080">
-           
+
 
                     <strong>
-           
-                <asp:Button ID = "Login" CssClass="auto-style8" runat ="server" BackColor="#66CCFF" BorderColor="White" BoderWidth="2px" Font-Names="Arial Rounded MT Bold" Height="25px" Text="Login" Width="105px" style="float: right" OnClick="Login_Click" ForeColor="White" />
+
+                        <asp:Button ID="Login" CssClass="auto-style8" runat="server" BackColor="#66CCFF" BorderColor="White" BoderWidth="2px" Font-Names="Arial Rounded MT Bold" Height="25px" Text="Login" Width="105px" Style="float: right" OnClick="Login_Click" ForeColor="White" />
 
 
-                 <asp:Button ID="Register" runat="server" Text="Register" OnClick="Register_Click" BackColor="#66CCFF" BorderColor="White" BorderWidth="2px" CssClass="auto-style8" Font-Names="Arial Rounded MT Bold" Height="25px" Width="105px" style="float: right" ForeColor="White"/>
+                        <asp:Button ID="Register" runat="server" Text="Register" OnClick="Register_Click" BackColor="#66CCFF" BorderColor="White" BorderWidth="2px" CssClass="auto-style8" Font-Names="Arial Rounded MT Bold" Height="25px" Width="105px" Style="float: right" ForeColor="White" />
 
-               
+
                     </strong>
 
-                </div>  </div>
+                </div>
             </div>
-             
+        </div>
+
         <div class="center">
-                  <div class="auto-style5">
-                      <div id="main">
-                    <div class="Container">                
-                  <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                
-
-                  
-                
-
-                  </asp:ContentPlaceHolder>
-                 </div>
-
-
-          
-
-            <div class="Footer">
-
-          
-       
-  
-
-                <h5 style="font-family: Arial, Helvetica, sans-serif; color: #FF00FF; vertical-align: bottom; text-align: center;" class="auto-style6">&nbsp;</h5>
-    <h5 style="font-family: Arial, Helvetica, sans-serif; color: #FF00FF; vertical-align: bottom; text-align: center;" class="auto-style6">&nbsp;</h5>
-    <h5 style="font-family: Arial, Helvetica, sans-serif; color: #FF00FF; vertical-align: bottom; text-align: center;" class="auto-style7">&nbsp;</h5>
-    <h5 style="font-family: Arial, Helvetica, sans-serif; color: #000000; vertical-align: bottom; text-align: center;" class="auto-style6"><strong>(C)CopyRight</strong></h5>
- </div>  </div>  </div></div>
+            <div class="auto-style5">
+                <div id="main">
+                    <div class="Container">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
 </body>
-     
+
 </html>

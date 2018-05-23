@@ -52,7 +52,7 @@ namespace Team5BookStore
         protected void CheckOutButton_Click(object sender, EventArgs e)
         {
             CartModel.CheckOutCart(username);
-            Response.Redirect("~/Receipt.aspx");
+            Response.Redirect("~/Receipts.aspx");
         }
 
         protected void RefreshButton_Click(object sender, EventArgs e)

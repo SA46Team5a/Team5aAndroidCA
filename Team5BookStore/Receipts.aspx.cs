@@ -15,8 +15,7 @@ namespace Team5BookStore
             Label2.Text = DateTime.Now.ToString();
             if (!IsPostBack)
             {
-                //string username = Session[Constants.USER_ID].ToString();
-                string username = "Connie85";
+                string username = Session[Constants.USER_ID].ToString();
                 GridView1.DataSource = CartItemModel.GetCartItems(username);
                 GridView1.DataBind();
                 List<UserDetail> user = new List<UserDetail>();
@@ -25,5 +24,8 @@ namespace Team5BookStore
                 DetailsView1.DataBind();
             }
         }
+
+        protected void GoBack(object sender, EventArgs e)
+            => Response.Redirect("~/BookListings");
     }
 }

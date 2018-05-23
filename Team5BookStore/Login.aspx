@@ -51,7 +51,7 @@
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Login1" 
             ShowSummary="true" DisplayMode="BulletList" ForeColor="#CC0000" CssClass="auto-style10" />
  
-    <asp:Login ID="Login1" runat="server" CssClass="auto-style9">
+    <%--<asp:Login ID="Login1" runat="server" CssClass="auto-style9">
         <LayoutTemplate>
             <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
                 <tr>
@@ -92,7 +92,7 @@
                             </tr>
                             <tr>
                                 <td align="right" colspan="2">
-                                    <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ValidationGroup="Login1" OnClick="LoginButton_Click" />
+                                    <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ValidationGroup="Login1" LoggedIn="LoginButton_Click" />
                                 </td>
                             </tr>
                         </table>
@@ -100,6 +100,9 @@
                 </tr>
             </table>
         </LayoutTemplate>
-    </asp:Login>
+
+    </asp:Login>--%>
          </div>
+    <asp:Login ID="Login1" runat="server" DestinationPageUrl="~/BookListing.aspx" OnLoggedIn="Login1_LoggedIn">
+    </asp:Login>
 </asp:Content>

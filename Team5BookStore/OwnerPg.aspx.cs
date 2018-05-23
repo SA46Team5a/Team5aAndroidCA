@@ -12,6 +12,8 @@ namespace Team5BookStore
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!(bool)Session[Constants.IS_BOSS])
+                Response.Redirect("~/Login.aspx");
             if (!IsPostBack)
             {
                 BindGrid();

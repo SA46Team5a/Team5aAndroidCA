@@ -60,7 +60,7 @@
               }
         </style>
         <div class="center">
-        <asp:Button ID="Button1" runat="server" Text="Back" style="text-align: center" Height="25px" Width="100px" CssClass="bttn" BorderColor="#99CCFF" BackColor="#99CCFF" /> 
+        <asp:Button ID="Button1" runat="server" Text="Back" style="text-align: center" Height="25px" Width="100px" CssClass="bttn" BorderColor="#99CCFF" BackColor="#99CCFF" OnClick="GoBack"/> 
         </div>  
     <p>  </p>
     <p>

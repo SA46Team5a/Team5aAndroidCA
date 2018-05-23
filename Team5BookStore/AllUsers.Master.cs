@@ -18,5 +18,11 @@ namespace Team5BookStore
         {
 
         }
+
+        protected void GoToCart(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ShoppingCart.aspx");
+        }
+
     }
 }

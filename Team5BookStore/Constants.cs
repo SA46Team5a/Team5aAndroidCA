@@ -12,5 +12,6 @@ namespace Team5BookStore
         public const string USER_ID = "userID"; // Assign strings to this key
         public const string ISBN = "ISBN"; // Assign ISBN to this key
         public const string REDIRECT_BOOK = "RedirectBook"; // Assign ISBN to return to
+        public const string IS_BOSS = "ISBOSS";
     }
 }
