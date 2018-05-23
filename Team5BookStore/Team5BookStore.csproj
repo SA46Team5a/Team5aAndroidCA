@@ -385,6 +385,9 @@
     <Compile Include="Receipts.aspx.designer.cs">
       <DependentUpon>Receipts.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Signout.aspx.cs">
       <DependentUpon>Signout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

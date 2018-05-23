@@ -13,6 +13,10 @@ namespace Team5BookStore
         PagedDataSource pg = new PagedDataSource();
         DataList DataList1 = new DataList();
 
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            MasterPage.Picker(this);
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
         }
