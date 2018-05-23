@@ -206,7 +206,7 @@
                 &nbsp;</p>
         <p aria-autocomplete="both" style="margin-top: 19px">
 &nbsp;&nbsp;&nbsp;&nbsp;
-             </br>
+             <br/>
             <asp:Label ID="Label_Recommendedbooks" runat="server" CssClass="auto-style25" Text="Recommended books"></asp:Label>
             </p>
          <p aria-autocomplete="both" class="auto-style7" style="margin-top: 19px">
@@ -218,11 +218,11 @@
          <p aria-autocomplete="both" class="auto-style7" style="margin-top: 19px">
              &nbsp;</p>
         
-         </br>
+         
           </div>
      
 
-             </br>
+             
      
              &nbsp;<div class="auto-style20">
       

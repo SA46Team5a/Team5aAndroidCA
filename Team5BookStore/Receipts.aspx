@@ -7,8 +7,9 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
+   
      <h1 class="auto-style3" style="background-color: #990000; color: #FFFFFF"> &nbsp;Receipts </h1>   
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+    <p style ="text-align:center"><asp:Label ID="Label2" runat="server" Text="Label" style="text-align: center" ></asp:Label> </p>
         <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="554px" AutoGenerateRows="False" CellPadding="4" ForeColor="#333333" HorizontalAlign="Center" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
@@ -69,7 +70,7 @@
      
         &nbsp;</p>
     <p>
-        <asp:Label ID="Label1" runat="server" Text="Company Details: <br/> ISS book store<br/> Heng Mui Keng Terrace 25<br/>Singapore 119614 <br/> +65 87666666" style="color: #999999"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Company Details:<br/>ISS book store<br/> Heng Mui Keng Terrace 25 <br/>Singapore 119614 <br/> +65 87666666" style="color: #999999"></asp:Label>
         <br />
     </p>
 </asp:Content>

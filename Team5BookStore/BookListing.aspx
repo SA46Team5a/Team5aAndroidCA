@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AllUsers.Master" AutoEventWireup="true" CodeBehind="BookListing.aspx.cs" Inherits="Team5BookStore.BookListing" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AnonUsers.Master" AutoEventWireup="true" CodeBehind="BookListing.aspx.cs" Inherits="Team5BookStore.BookListing" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .div1 {
@@ -31,8 +31,8 @@
         <!DOCTYPE html>
         <h1 aria-readonly="True" style="text-align: center">    Welcome to ISS Book store! <br\>We hope you have a good day!</h1>
 
-            <div>
-                <asp:ListView ID="ListView1" runat="server" DataSourceID="Books" GroupItemCount="3" >
+            <div style ="text-align:center">
+                <asp:ListView ID="ListView1" runat="server" DataSourceID="Books" GroupItemCount="4" >
                     <GroupTemplate>
                         <tr id="itemPlaceholderContainer" runat="server">
                             <td id="itemPlaceholder" runat="server"></td>
@@ -40,13 +40,13 @@
                     </GroupTemplate>
                     <ItemTemplate>
                         <td runat="server" style="">Title:
-                            <asp:Label ID="TitleLabel" runat="server" Text='<%# Eval("Title") %>' />
+                            <asp:Label ID="TitleLabel" runat="server" ForeColor="#66ccff" Text='<%# Eval("Title") %>' />
                             <br />
                             <asp:Label ID="AuthorLabel" runat="server" Text='<%# Eval("Author") %>' />
                             <br />
                             <asp:Label ID="CategoryLabel" runat="server" Text='<%# Eval("Category") %>' />
                             <br />
-                            <asp:Label ID="PriceLabel" runat="server" Text='<%# Eval("Price") %>' />
+                            <asp:Label ID="PriceLabel" runat="server" ForeColor="Red" Text='<%# Eval("Price") %>' />
                             <br />
                             <asp:ImageButton ImageUrl='<%# Eval("Address") %>' runat="server" OnClick="Image_ClickEvent" Value='<%# Eval("ISBN") %>'/>
                             <br />

@@ -12,6 +12,7 @@ namespace Team5BookStore
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Label2.Text = DateTime.Now.ToString();
             if (!IsPostBack)
             {
                 //string username = Session[Constants.USER_ID].ToString();
