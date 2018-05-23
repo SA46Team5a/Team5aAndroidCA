@@ -4,6 +4,14 @@
 
 <html>
 <head runat="server">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -52,6 +60,19 @@
                display: block;
                   }
 
+         .auto-style3 {
+             height: 35px;
+         }
+         .auto-style4 {
+             height: 86px;
+         }
+         .auto-style5 {
+             height: 151px;
+         }
+         .auto-style6 {
+             height: 19px;
+         }
+
     </style>
                        
 
@@ -59,30 +80,25 @@
 <body>
     <form id="form1" runat="server">
         <div>            
-             <div class="header">
-                <div class="Logo">
-                    <a href="http://localhost:52814/m2.aspx">                   
-                    <img src="http://www.eatlogos.com/education_logos/png/m-letter-with-book-logo-design.png" class="auto-style2" />
+             <div class="navbar navbar-default">
+                <div class="Logo" style="background-color: #FF9933; color: #FFFFFF; font-style: italic; text-transform: capitalize; font-variant: normal; font-weight: bold; font-size: large; vertical-align: middle; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                    <a href="http://localhost:52814/m2.aspx" style="background-color: #FF9933">                   
+                    <img src="http://www.eatlogos.com/education_logos/png/m-letter-with-book-logo-design.png" class="auto-style2" style="background-color: #FF9933" />
                         
-                        </a>
-                </div>                   
 
-                <div class="search">
-                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                     <asp:Button ID="Search" runat="server" Text="Search" OnClick="Search_Click" />
-                </div>
-
-                <div class="Navigation">
-                   <asp:ImageButton ID="ImageButton1" runat="server" src="https://image.flaticon.com/icons/svg/2/2772.svg" Height="26px" Width="88px" />
-
-                    <div class="dropdown">
-                          <button class="dropbtn">Account</button>
+                       <%-- </a>ISS Book Store</div> --%>                  
+                
+                       </a><CENTER><Font color="white" style="font-size:larger"> ISS BOOK STORE</Font></CENTER>
+                <div class="auto-style3" style="background-color: #FF9933">
+                    <div class="dropdown" style="float:right">
+                          <button class="dropbtn" style="color: #000000; background-color: #6699FF; font-weight: normal;">Account</button>
                           <div class="dropdown-content">
                           <a href="http://localhost:52814/Login.aspx">Sign Out</a>
                           <a href="#">Link 2</a>
                           <a href="#">Link 3</a>
                           </div>
                     </div>
+                     <asp:ImageButton ID="ImageButton1" runat="server" src="https://image.flaticon.com/icons/svg/2/2772.svg" Height="26px" Width="88px" style="float:right"/>
                 </div>
 
             </div>
@@ -95,7 +111,11 @@
             </div>
             <div class="Footer">
 
-                <h5>(C)CopyRight</h5>
+                <h5 class="auto-style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h5>
+                <h5 class="auto-style4">&nbsp;</h5>
+                <h5 class="auto-style4">&nbsp;</h5>
+                <h5 class="auto-style5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h5>
+                <h5 class="auto-style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (C)CopyRight</h5>
                 
             </div>
         </div>
