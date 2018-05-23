@@ -69,5 +69,26 @@ namespace Team5BookStore.Models
 
             return searchResult;
         }
+        public static void Updatebook(String ISBN,
+        decimal price, int stock)
+        {
+            using (BookStoreEntities entities = new BookStoreEntities())
+            {
+                Book book = entities.Books.Where(p => p.ISBN == ISBN).First();
+                book.Price = price;
+                book.StockLevel = stock;
+
+                entities.SaveChanges();
+            }
+        }
+        public static void DeleteBook(string ISBN)
+        {
+            using (BookStoreEntities entities = new BookStoreEntities())
+            {
+                Book order = entities.Books.Where(p => p.ISBN == ISBN).First();
+                entities.Books.Remove(order);
+                entities.SaveChanges();
+            }
+        }
     }
 }
