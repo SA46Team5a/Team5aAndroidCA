@@ -71,6 +71,12 @@ namespace Team5BookStore.Models
             cartItems.Select(ci => ci.Book).ToList();
             return cartItems;
         }
+
+        public static List<CartItem> GetCheckedOutCart(string userName)
+        {
+            Cart cart = context.Carts.OrderByDescending(c => c.CartID).First(c => c.CheckedOut);
+            return cart.CartItems.ToList();
+        }
     }
 
     public class CartModel

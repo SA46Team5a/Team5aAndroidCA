@@ -83,13 +83,10 @@
              <div class="navbar navbar-default">
                  <div class="container-fluid" style="background-color: #FF9933; background-repeat: repeat; background-attachment: fixed">
             
-                     <a href="http://localhost:52814/Login.aspx" style="background-color: #FF9933; background-repeat: repeat; background-attachment: fixed">                   
-                    &nbsp;<img src="http://www.eatlogos.com/education_logos/png/m-letter-with-book-logo-design.png" class="auto-style2" style="background-color: #FF9933" /></a>
+
+                     <a href="BookListing.aspx" style="background-color: #FF9933; background-repeat: repeat; background-attachment: fixed">                   
+                    &nbsp;<img src="http://www.eatlogos.com/education_logos/png/m-letter-with-book-logo-design.png" class="auto-style2" style="background-color: #FF9933" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                      <h1 style="position: absolute; top: 7px; left: 413px; color: #FFFFFF; font-style: italic;">Welcome to ISS Book Store</h1>
-
-                  <%--  <asp:TextBox ID="TextBox1" runat="server" HorizontalAlign="Center"></asp:TextBox>
-                    <asp:Button ID="Search" runat="server" Text="Search" />--%>
-
                
 
                 <div class="Navigation" style="background-color: #808080">
@@ -97,19 +94,14 @@
 
                     <strong>
            
-
                 <asp:Button ID = "Login" CssClass="auto-style8" runat ="server" BackColor="#66CCFF" BorderColor="White" BoderWidth="2px" Font-Names="Arial Rounded MT Bold" Height="25px" Text="Login" Width="105px" style="float: right" OnClick="Login_Click" ForeColor="White" />
+
 
                  <asp:Button ID="Register" runat="server" Text="Register" OnClick="Register_Click" BackColor="#66CCFF" BorderColor="White" BorderWidth="2px" CssClass="auto-style8" Font-Names="Arial Rounded MT Bold" Height="25px" Width="105px" style="float: right" ForeColor="White"/>
 
                
                     </strong>
 
-               
-<%--                    <asp:Button ID="Login" runat="server" Text="Login"  OnClick="Login_Click" style="float: right" />
-                                  
-
-                   <asp:Button ID="Register" runat="server" Text="Register" OnClick="Register_Click" style="float: right" />--%>
                 </div>  </div>
             </div>
              

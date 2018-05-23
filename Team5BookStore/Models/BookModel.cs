@@ -30,8 +30,8 @@ namespace Team5BookStore.Models
         static public List<Book> GetAllBooks()
             => context.Books.ToList();
 
-        static public List<Book> GetBooksByAuthor(Author author)
-            => context.Books.Where(b => b.Author.AuthorID == author.AuthorID).ToList();
+        static public List<Book> GetBooksByCategory(Category category)
+            => context.Books.Where(b => b.Category.CategoryID == category.CategoryID).ToList();
 
         static public List<Book> SearchBooks(SearchFilter filter)
         {
