@@ -110,6 +110,13 @@ namespace Team5BookStore.Models
             else
                 return openCart.Last();
         }
- 
+
+        public static void CheckOutCart(string username)
+        {
+            Cart cart = context.Carts.Where(c => c.UserDetail.UserName == username).First();
+            cart.CheckedOut = true;
+
+            context.SaveChanges();
+        }
     }
 }
