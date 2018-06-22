@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class BookModel extends HashMap<String, Object>{
-    final static String baseURL="";
+    final static String baseURL="http://172.17.249.19/BookStore/Endpoint/IBookService.svc/";
     public BookModel(String title, String authorName, String categoryName,
                      String isbn, Integer categoryID,Double discountedprice,
                      Double price, Double stockLevel, String synopsis)
@@ -104,10 +104,11 @@ public class BookModel extends HashMap<String, Object>{
         }
         return(list);
     }
-    public static BookModel getEmp(String eid) {
-        JSONObject b = JSONParser.getJSONFromUrl(baseURL + "BookModel/" + eid);
+    public static BookModel getBook(String btitle) {
+        BookModel book = new BookModel();
+        JSONObject b = JSONParser.getJSONFromUrl(baseURL + "BookModel/" + btitle);
         try {
-            BookModel book = new BookModel();
+           // BookModel book = new BookModel();
             book.setTitle(b.getString("Title"));
             book.setAuthorName(b.getString("AuthorName"));
             book.setcategoryName(b.getString("CategoryName"));
@@ -121,6 +122,7 @@ public class BookModel extends HashMap<String, Object>{
         } catch (Exception e) {
             Log.e("BookModel.getBook()", "JSONArray error");
         }
+        return book;
     }
 
 
