@@ -31,6 +31,15 @@ namespace Team5BookStore.Endpoint
             return null;
         }
 
+        public List<WCF_Book> SearchBooksByTitle(string searchterm)
+        {
+                           
+                List<Book> books = BookModel.SearchBooksByTitle(searchterm);
+                return ConvertBooksToWCF_Books(books);           
+        
+
+        }
+
         public List<WCF_Book> ConvertBooksToWCF_Books(List<Book> books)
         {
             List<WCF_Book> convertedBooks = new List<WCF_Book>();

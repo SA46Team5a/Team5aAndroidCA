@@ -22,6 +22,10 @@ namespace Team5BookStore.Endpoint
         [OperationContract]
         [WebGet(UriTemplate = "/Books/Category/{CategoryID}", ResponseFormat = WebMessageFormat.Json)]
         List<WCF_Book> GetBooksByCategory(string CategoryID);
+
+        [OperationContract]
+        [WebGet(UriTemplate = "/Books/Search/{searchterm}", ResponseFormat = WebMessageFormat.Json)]
+        List<WCF_Book> SearchBooksByTitle(string searchterm);
     }
 
     [DataContract]

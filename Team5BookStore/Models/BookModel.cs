@@ -33,6 +33,9 @@ namespace Team5BookStore.Models
         static public List<Book> GetBooksByCategory(Category category)
             => context.Books.Where(b => b.Category.CategoryID == category.CategoryID).ToList();
 
+        static public List<Book> SearchBooksByTitle(String searchterm)
+            => context.Books.Where(b => b.Title.Contains(searchterm)).ToList();
+
         static public List<Book> SearchBooks(SearchFilter filter)
         {
             List<Book> searchResult = new List<Book>();
