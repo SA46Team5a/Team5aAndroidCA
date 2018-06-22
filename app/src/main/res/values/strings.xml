@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Team5aAndroidCA</string>
-    <string name="name">Name</string>
-    <string name="eid">Emp id</string>
-    <string name="salary">Salary</string>
-    <string name="address">Address</string>
+    <string name="btitle">Title</string>
+    <string name="authorname">AuthorName</string>
+    <string name="categoryName">CategoryName</string>
+    <string name="isbn">ISBN</string>
+    <string name="categoryID">DiscountedPrice</string>
+    <string name="discountedprice">Price</string>
+    <string name="price">CategoryID</string>
+    <string name="stockLevel">Synopsis</string>
+    <string name="synopsis">StockLevel</string>
 </resources>

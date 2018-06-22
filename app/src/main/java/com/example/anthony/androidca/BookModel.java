@@ -5,12 +5,14 @@ import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+
 public class BookModel extends HashMap<String, Object>{
-    final static String baseURL="";
+    final static String baseURL="172.17.249.19/BookStore/Endpoint/IBookService.svc/Books/";
     public BookModel(String title, String authorName, String categoryName,
                      String isbn, Integer categoryID,Double discountedprice,
                      Double price, Double stockLevel, String synopsis)
@@ -93,21 +95,45 @@ public class BookModel extends HashMap<String, Object>{
         put("ISBN", isbn);
     }
 
-    public static List<String> list() {
-        List<String> list = new ArrayList<String>();
-        JSONArray a = JSONParser.getJSONArrayFromUrl(baseURL + "BookModel");
+    public static ArrayList<BookModel> search(String searchResult) {
+        ArrayList<BookModel> list = new ArrayList<BookModel>();
+        JSONArray a = JSONParser.getJSONArrayFromUrl(baseURL + "Search/" + searchResult);
         try {
-            for (int i =0; i<a.length(); i++)
-                list.add(a.getString(i));
+            BookModel book;
+            for (int i = 0; i<a.length(); i++) {
+
+
+
+
+                    book = new BookModel();
+                    JSONObject b = a.getJSONObject(i);
+
+
+                    book.setTitle(b.getString("Title"));
+                    book.setAuthorName(b.getString("AuthorName"));
+                    book.setcategoryName(b.getString("CategoryName"));
+                    book.setISBN(b.getString("ISBN"));
+                    book.setDiscountedprice(b.getDouble("Discountedprice"));
+                    book.setPrice(b.getDouble("Price"));
+                    book.setCategoryID(b.getInt("CategoryID"));
+                    book.setSynopsis(b.getString("Synopsis"));
+                    book.setStockLevel(b.getDouble("StockLevel"));
+
+                    list.add(book);
+
+
+
+            }
         } catch (Exception e) {
             Log.e("BookModel.list()", "JSONArray error");
         }
         return(list);
     }
-    public static BookModel getEmp(String eid) {
-        JSONObject b = JSONParser.getJSONFromUrl(baseURL + "BookModel/" + eid);
+    public static BookModel getbook(String btitle) {
+        JSONObject b = JSONParser.getJSONFromUrl(baseURL + btitle);
+        BookModel book = new BookModel();
         try {
-            BookModel book = new BookModel();
+            //BookModel book = new BookModel();
             book.setTitle(b.getString("Title"));
             book.setAuthorName(b.getString("AuthorName"));
             book.setcategoryName(b.getString("CategoryName"));
@@ -121,8 +147,6 @@ public class BookModel extends HashMap<String, Object>{
         } catch (Exception e) {
             Log.e("BookModel.getBook()", "JSONArray error");
         }
+        return book;
     }
-
-
-
 }
