@@ -28,6 +28,7 @@ namespace Team5BookStore.Endpoint
     public class WCF_Book
     {
         [DataMember] public string ISBN;
+        [DataMember] public string Title;
         [DataMember] public string AuthorName;
         [DataMember] public int CategoryID;
         [DataMember] public string CategoryName;
@@ -40,6 +41,7 @@ namespace Team5BookStore.Endpoint
         {
             ISBN = book.ISBN;
             AuthorName = book.Author.AuthorName;
+            Title = book.Title;
             CategoryID = book.Category.CategoryID;
             CategoryName = book.Category.CategoryName;
             Price = book.Price;
