@@ -21,11 +21,14 @@ namespace Team5BookStore.Endpoint
             return new WCF_Book(book);
         }
 
-        public List<WCF_Book> GetBooksByCategory(int categoryID)
+        public List<WCF_Book> GetBooksByCategory(string categoryID)
         {
-            Category category = CategoryModel.GetCategoryByID(categoryID);
-            List<Book> books = BookModel.GetBooksByCategory(category);
-            return ConvertBooksToWCF_Books(books);
+            if (Int32.TryParse(categoryID, out int catId)) {
+                Category category = CategoryModel.GetCategoryByID(catId);
+                List<Book> books = BookModel.GetBooksByCategory(category);
+                return ConvertBooksToWCF_Books(books);
+            }
+            return null;
         }
 
         public List<WCF_Book> ConvertBooksToWCF_Books(List<Book> books)

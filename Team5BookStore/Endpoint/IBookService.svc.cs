@@ -20,8 +20,8 @@ namespace Team5BookStore.Endpoint
         List<WCF_Book> GetAllBooks();
 
         [OperationContract]
-        [WebGet(UriTemplate = "/Product/Category/{CategoryID}", ResponseFormat = WebMessageFormat.Json)]
-        List<WCF_Book> GetBooksByCategory(int CategoryID);
+        [WebGet(UriTemplate = "/Books/Category/{CategoryID}", ResponseFormat = WebMessageFormat.Json)]
+        List<WCF_Book> GetBooksByCategory(string CategoryID);
     }
 
     [DataContract]
@@ -42,9 +42,10 @@ namespace Team5BookStore.Endpoint
             AuthorName = book.Author.AuthorName;
             CategoryID = book.Category.CategoryID;
             CategoryName = book.Category.CategoryName;
-            Price = (decimal)book.Price;
-            DiscountedPrice = (decimal)book.DiscountedPrice;
+            Price = book.Price;
+            DiscountedPrice = book.DiscountedPrice is null ? book.Price : (decimal)book.DiscountedPrice;
             StockLevel = book.StockLevel;
+            Synopsis = book.Synopsis;
         }
     }
 }
