@@ -7,10 +7,14 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+
 
 public class BookModel extends HashMap<String, Object>{
-    final static String baseURL="http://172.17.249.19/BookStore/Endpoint/IBookService.svc/";
+
+    final static String baseURL="http://172.17.249.19/BookStore/Endpoint/IBookService.svc/Books/";
+
+
+
     public BookModel(String title, String authorName, String categoryName,
                      String isbn, Integer categoryID,Double discountedprice,
                      Double price, Double stockLevel, String synopsis)
@@ -20,7 +24,7 @@ public class BookModel extends HashMap<String, Object>{
         setcategoryName(categoryName);
         setISBN(isbn);
         setCategoryID(categoryID);
-        setDiscountedprice(discountedprice);
+        setDiscountedPrice(discountedprice);
         setPrice(price);
         setStockLevel(stockLevel);
         setSynopsis(synopsis);
@@ -57,12 +61,12 @@ public class BookModel extends HashMap<String, Object>{
     public void setcategoryName(String categoryName) {
         put("CategoryName", categoryName);
     }
-    public Double getDiscountedprice() {
-        return (Double) get("Discountedprice");
+    public Double getDiscountedPrice() {
+        return (Double) get("DiscountedPrice");
     }
 
-    public void setDiscountedprice(Double discountedprice) {
-        put("Discountedprice", discountedprice);
+    public void setDiscountedPrice(Double discountedprice) {
+        put("DiscountedPrice", discountedprice);
     }
     public Double getPrice() {
         return (Double) get("Price");
@@ -93,38 +97,56 @@ public class BookModel extends HashMap<String, Object>{
         put("ISBN", isbn);
     }
 
-    public static List<String> list() {
-        List<String> list = new ArrayList<String>();
-        JSONArray a = JSONParser.getJSONArrayFromUrl(baseURL + "BookModel");
+    public static ArrayList<BookModel> search(String searchResult) {
+        ArrayList<BookModel> list = new ArrayList<BookModel>();
+        JSONArray a = JSONParser.getJSONArrayFromUrl(baseURL + "Search/" + searchResult);
         try {
-            for (int i =0; i<a.length(); i++)
-                list.add(a.getString(i));
+            BookModel book;
+            for (int i = 0; i<a.length(); i++) {
+
+                    book = new BookModel();
+                    JSONObject b = a.getJSONObject(i);
+                    book.setTitle(b.getString("Title"));
+                    book.setAuthorName(b.getString("AuthorName"));
+                    book.setcategoryName(b.getString("CategoryName"));
+                    book.setISBN(b.getString("ISBN"));
+                    book.setDiscountedPrice(b.getDouble("DiscountedPrice"));
+                    book.setPrice(b.getDouble("Price"));
+                    book.setCategoryID(b.getInt("CategoryID"));
+                    book.setSynopsis(b.getString("Synopsis"));
+                    book.setStockLevel(b.getDouble("StockLevel"));
+
+                    list.add(book);
+
+
+
+            }
         } catch (Exception e) {
             Log.e("BookModel.list()", "JSONArray error");
         }
         return(list);
     }
-    public static BookModel getBook(String btitle) {
+    public static BookModel getbook(String isbn) {
+        JSONObject b = JSONParser.getJSONFromUrl(baseURL + isbn);
         BookModel book = new BookModel();
-        JSONObject b = JSONParser.getJSONFromUrl(baseURL + "BookModel/" + btitle);
         try {
-           // BookModel book = new BookModel();
+            //BookModel book = new BookModel();
+
             book.setTitle(b.getString("Title"));
             book.setAuthorName(b.getString("AuthorName"));
             book.setcategoryName(b.getString("CategoryName"));
             book.setISBN(b.getString("ISBN"));
-            book.setDiscountedprice(b.getDouble("Discountedprice"));
+            book.setDiscountedPrice(b.getDouble("DiscountedPrice"));
             book.setPrice(b.getDouble("Price"));
             book.setCategoryID(b.getInt("CategoryID"));
             book.setSynopsis(b.getString("Synopsis"));
             book.setStockLevel(b.getDouble("StockLevel"));
-            return book;
+            //return book;
         } catch (Exception e) {
             Log.e("BookModel.getBook()", "JSONArray error");
         }
+
+        System.out.print(book.getAuthorName());
         return book;
     }
-
-
-
 }

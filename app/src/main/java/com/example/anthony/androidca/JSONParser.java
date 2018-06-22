@@ -78,6 +78,7 @@ public class JSONParser {
         JSONObject jObj = null;
         try {
             jObj = new JSONObject(getStream(url));
+            Log.i("TEST", jObj.toString());
         } catch (JSONException e) {
             Log.e("Exception", StackTrace.trace(e));
         }
