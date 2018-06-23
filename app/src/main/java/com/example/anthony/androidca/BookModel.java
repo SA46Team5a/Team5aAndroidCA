@@ -1,7 +1,11 @@
 package com.example.anthony.androidca;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.preference.Preference;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -17,9 +21,9 @@ import java.util.HashMap;
 
 public class BookModel extends HashMap<String, Object>{
 
-    final static String ipAddress = "http://172.17.200.251/";
-    final static String imgURL = ipAddress + "BookStore/Resources/BookCovers/";
-    final static String baseURL= ipAddress + "BookStore/Endpoint/IBookService.svc/Books/";
+    static String ipAddress = "10.0.2.2";
+    static String imgURL = "http://" + ipAddress + "/BookStore/Resources/BookCovers/";
+    static String baseURL= "http://" + ipAddress + "/BookStore/Endpoint/IBookService.svc/Books/";
 
     public BookModel(JSONObject b) throws JSONException {
         setTitle(b.getString("Title"));
@@ -50,6 +54,10 @@ public class BookModel extends HashMap<String, Object>{
     }
 
     private BookModel() {};
+
+    public static void setIPAddress(String ip) {
+        ipAddress = ip;
+    }
 
     public String getTitle() {
         return (String) get("Title");
