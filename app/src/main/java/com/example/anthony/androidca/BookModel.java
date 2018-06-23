@@ -1,19 +1,37 @@
 package com.example.anthony.androidca;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 
 public class BookModel extends HashMap<String, Object>{
 
-    final static String baseURL="http://172.17.249.19/BookStore/Endpoint/IBookService.svc/Books/";
+    final static String ipAddress = "http://172.17.200.251/";
+    final static String imgURL = ipAddress + "BookStore/Resources/BookCovers/";
+    final static String baseURL= ipAddress + "BookStore/Endpoint/IBookService.svc/Books/";
 
-
+    public BookModel(JSONObject b) throws JSONException {
+        setTitle(b.getString("Title"));
+        setAuthorName(b.getString("AuthorName"));
+        setcategoryName(b.getString("CategoryName"));
+        setISBN(b.getString("ISBN"));
+        setDiscountedPrice(b.getDouble("DiscountedPrice"));
+        setPrice(b.getDouble("Price"));
+        setCategoryID(b.getInt("CategoryID"));
+        setSynopsis(b.getString("Synopsis"));
+        setStockLevel(b.getDouble("StockLevel"));
+    }
 
     public BookModel(String title, String authorName, String categoryName,
                      String isbn, Integer categoryID,Double discountedprice,
@@ -99,27 +117,17 @@ public class BookModel extends HashMap<String, Object>{
 
     public static ArrayList<BookModel> search(String searchResult) {
         ArrayList<BookModel> list = new ArrayList<BookModel>();
-        JSONArray a = JSONParser.getJSONArrayFromUrl(baseURL + "Search/" + searchResult);
+        JSONArray a;
+        if (searchResult == null || searchResult.equals(""))
+            a = JSONParser.getJSONArrayFromUrl(baseURL);
+        else
+            a = JSONParser.getJSONArrayFromUrl(baseURL + "Search/" + searchResult);
         try {
             BookModel book;
             for (int i = 0; i<a.length(); i++) {
-
-                    book = new BookModel();
-                    JSONObject b = a.getJSONObject(i);
-                    book.setTitle(b.getString("Title"));
-                    book.setAuthorName(b.getString("AuthorName"));
-                    book.setcategoryName(b.getString("CategoryName"));
-                    book.setISBN(b.getString("ISBN"));
-                    book.setDiscountedPrice(b.getDouble("DiscountedPrice"));
-                    book.setPrice(b.getDouble("Price"));
-                    book.setCategoryID(b.getInt("CategoryID"));
-                    book.setSynopsis(b.getString("Synopsis"));
-                    book.setStockLevel(b.getDouble("StockLevel"));
-
-                    list.add(book);
-
-
-
+                JSONObject b = a.getJSONObject(i);
+                book = new BookModel(b);
+                list.add(book);
             }
         } catch (Exception e) {
             Log.e("BookModel.list()", "JSONArray error");
@@ -128,25 +136,30 @@ public class BookModel extends HashMap<String, Object>{
     }
     public static BookModel getbook(String isbn) {
         JSONObject b = JSONParser.getJSONFromUrl(baseURL + isbn);
-        BookModel book = new BookModel();
+        BookModel book;
         try {
-            //BookModel book = new BookModel();
-
-            book.setTitle(b.getString("Title"));
-            book.setAuthorName(b.getString("AuthorName"));
-            book.setcategoryName(b.getString("CategoryName"));
-            book.setISBN(b.getString("ISBN"));
-            book.setDiscountedPrice(b.getDouble("DiscountedPrice"));
-            book.setPrice(b.getDouble("Price"));
-            book.setCategoryID(b.getInt("CategoryID"));
-            book.setSynopsis(b.getString("Synopsis"));
-            book.setStockLevel(b.getDouble("StockLevel"));
-            //return book;
+            book = new BookModel(b);
         } catch (Exception e) {
+            book = new BookModel();
             Log.e("BookModel.getBook()", "JSONArray error");
         }
 
         System.out.print(book.getAuthorName());
         return book;
+    }
+
+    public static Bitmap getBookCover(String isbn) {
+        String source = imgURL + isbn + ".jpg";
+        try {
+            URL url = new URL(source);
+            URLConnection connection = url.openConnection();
+            InputStream inputStream = connection.getInputStream();
+            Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+            inputStream.close();
+            return bitmap;
+        } catch (Exception e) {
+
+        }
+        return null;
     }
 }

@@ -17,34 +17,19 @@ public class BookDetailActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_book_detail);
-        //StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.LAX);
-        //Intent i = getIntent();
-        //String isbn = i.getStringExtra("isbn");
-        new AsyncTask<String, Void, ArrayList<BookModel>>() {
-
-
+        setContentView(R.layout.activity_book_detail);
+        Intent i = getIntent();
+        final String isbn = i.getStringExtra("isbn");
+        new AsyncTask<String, Void, BookModel>() {
             @Override
-
-            protected ArrayList<BookModel> doInBackground(String... params) {
-
-                String searchResult = "9780060555665";//params[0]
-                return BookModel.search(searchResult);
-
+            protected BookModel doInBackground(String... params) {
+                return BookModel.getbook(isbn);
             }
-
-
-            protected void onPostExecute(List<BookModel> result) {
-               for(BookModel book:result) {
-                   book = BookModel.getbook("9780060555665");
-                   show(book);
-               }
-
+            @Override
+            protected void onPostExecute(BookModel result) {
+               show(result);
             }
         }.execute();
-
-
-
    }
 
     void show(BookModel book) {
@@ -57,10 +42,6 @@ public class BookDetailActivity extends Activity {
         for (int i = 0; i < keys.length; i++) {
             TextView e = (TextView) findViewById(ids[i]);
             e.setText(book.get(keys[i]).toString());
-
-
         }
-
-
     }
 }
