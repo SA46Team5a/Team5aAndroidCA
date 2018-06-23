@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -33,7 +34,8 @@ public class SearchActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent searchIntent = new Intent(view.getContext(), ListOfBooksActivity.class);
-                searchIntent.putExtra("searchTerm", searchButton.getText().toString());
+                Log.i("searchTerm", searchTerm.getText().toString());
+                searchIntent.putExtra("searchTerm", searchTerm.getText().toString());
                 startActivity(searchIntent);
             }
         });
