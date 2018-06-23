@@ -16,15 +16,17 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Title" />
 
-            <EditText
+            <TextView
+                android:id="@+id/textView_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText1" />
+                 />
+
 
         </TableRow>
 
@@ -33,15 +35,16 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/AuthorName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="AuthorName" />
 
-            <EditText
+            <TextView
+                android:id="@+id/textView_anthorname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText2" />
+                 />
         </TableRow>
 
         <TableRow
@@ -49,15 +52,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/CategoryName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CategoryName:" />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText3" />
+                android:id="@+id/textView_categoryname" />
         </TableRow>
 
         <TableRow
@@ -65,15 +68,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/CategoryID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CategoryID" />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText4" />
+                android:id="@+id/textView_categoryid" />
         </TableRow>
 
         <TableRow
@@ -81,15 +84,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/ISBN"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ISBN" />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText5" />
+                android:id="@+id/textView_isbn" />
         </TableRow>
 
         <TableRow
@@ -97,15 +100,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/DiscountedPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Discountedprice" />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText6" />
+                android:id="@+id/textView_discountedprice" />
         </TableRow>
 
         <TableRow
@@ -113,15 +116,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/Price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Price" />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText7" />
+                android:id="@+id/textView_price" />
         </TableRow>
 
         <TableRow
@@ -129,15 +132,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/StockLevel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="stockLevel" />
+                android:text="StockLevel" />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText8" />
+                android:id="@+id/textView_stocklevel" />
         </TableRow>
 
         <TableRow
@@ -145,15 +148,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/Synopsis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Synopsis" />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText9" />
+                android:id="@+id/textView_synopsis" />
         </TableRow>
 
     </TableLayout>

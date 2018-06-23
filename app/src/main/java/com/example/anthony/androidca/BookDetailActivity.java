@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public class BookDetailActivity extends Activity {
 
             protected ArrayList<BookModel> doInBackground(String... params) {
 
-                String searchResult = "9780060555665";
+                String searchResult = "9780060555665";//params[0]
                 return BookModel.search(searchResult);
 
             }
@@ -47,12 +48,14 @@ public class BookDetailActivity extends Activity {
    }
 
     void show(BookModel book) {
-        int[] ids = {R.id.editText1, R.id.editText2, R.id.editText3, R.id.editText4,
-                R.id.editText5, R.id.editText6, R.id.editText7, R.id.editText8, R.id.editText9};
+        int[] ids = {R.id.textView_title, R.id.textView_anthorname, R.id.textView_categoryname,
+                R.id.textView_isbn,  R.id.textView_discountedprice,R.id.textView_price,
+                R.id.textView_categoryid,  R.id.textView_synopsis,R.id.textView_stocklevel,
+                };
         String[] keys = {"Title", "AuthorName", "CategoryName", "ISBN","DiscountedPrice",
                 "Price","CategoryID","Synopsis","StockLevel"};
         for (int i = 0; i < keys.length; i++) {
-            EditText e = (EditText) findViewById(ids[i]);
+            TextView e = (TextView) findViewById(ids[i]);
             e.setText(book.get(keys[i]).toString());
 
 
