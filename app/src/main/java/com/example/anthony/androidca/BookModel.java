@@ -1,18 +1,25 @@
 package com.example.anthony.androidca;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 
 public class BookModel extends HashMap<String, Object>{
 
-    final static String baseURL="http://172.17.200.251/BookStore/Endpoint/IBookService.svc/Books/";
+    final static String ipAddress = "http://172.17.200.251/";
+    final static String imgURL = ipAddress + "BookStore/Resources/BookCovers/";
+    final static String baseURL= ipAddress + "BookStore/Endpoint/IBookService.svc/Books/";
 
     public BookModel(JSONObject b) throws JSONException {
         setTitle(b.getString("Title"));
@@ -139,5 +146,20 @@ public class BookModel extends HashMap<String, Object>{
 
         System.out.print(book.getAuthorName());
         return book;
+    }
+
+    public static Bitmap getBookCover(String isbn) {
+        String source = imgURL + isbn + ".jpg";
+        try {
+            URL url = new URL(source);
+            URLConnection connection = url.openConnection();
+            InputStream inputStream = connection.getInputStream();
+            Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+            inputStream.close();
+            return bitmap;
+        } catch (Exception e) {
+
+        }
+        return null;
     }
 }
