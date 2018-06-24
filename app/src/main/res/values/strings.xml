@@ -9,4 +9,5 @@
     <string name="price">CategoryID</string>
     <string name="stockLevel">Synopsis</string>
     <string name="synopsis">StockLevel</string>
+    <string name="BookDetails">BookDetails</string>
 </resources>

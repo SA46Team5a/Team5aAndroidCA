@@ -14,13 +14,17 @@ import java.util.List;
 
 public class BookDetailActivity extends Activity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    //@Override
+    protected void onCreate(Bundle savedInstanceState, BookModel book) {
         super.onCreate(savedInstanceState);
+        //the two line below is for setting the title dynamically
         //setContentView(R.layout.activity_book_detail);
+        //this.setTitle(book.getTitle().toString());
+
         //StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.LAX);
         //Intent i = getIntent();
         //String isbn = i.getStringExtra("isbn");
+
         new AsyncTask<String, Void, ArrayList<BookModel>>() {
 
 
@@ -38,6 +42,7 @@ public class BookDetailActivity extends Activity {
                for(BookModel book:result) {
                    book = BookModel.getbook("9780060555665");
                    show(book);
+                   //BookDetailActivity.setTitle("Hello World");
                }
 
             }
