@@ -17,7 +17,7 @@ import java.util.HashMap;
 
 public class BookModel extends HashMap<String, Object>{
 
-    final static String ipAddress = "http://172.17.200.251/";
+    final static String ipAddress = "http://10.0.2.2/";
     final static String imgURL = ipAddress + "BookStore/Resources/BookCovers/";
     final static String baseURL= ipAddress + "BookStore/Endpoint/IBookService.svc/Books/";
 

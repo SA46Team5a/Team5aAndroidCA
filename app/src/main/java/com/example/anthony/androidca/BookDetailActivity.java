@@ -14,7 +14,7 @@ import java.util.List;
 
 public class BookDetailActivity extends Activity {
 
-    @Override
+    //@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_detail);
@@ -25,6 +25,7 @@ public class BookDetailActivity extends Activity {
             protected BookModel doInBackground(String... params) {
                 return BookModel.getbook(isbn);
             }
+
             @Override
             protected void onPostExecute(BookModel result) {
                show(result);
@@ -43,5 +44,6 @@ public class BookDetailActivity extends Activity {
             TextView e = (TextView) findViewById(ids[i]);
             e.setText(book.get(keys[i]).toString());
         }
+        getActionBar().setTitle(book.getTitle());
     }
 }
