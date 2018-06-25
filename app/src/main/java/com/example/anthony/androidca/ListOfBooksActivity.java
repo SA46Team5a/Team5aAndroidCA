@@ -28,6 +28,7 @@ public class ListOfBooksActivity extends Activity {
     ResultsAdapter resultsAdapter;
     RecyclerView.LayoutManager layoutManager;
     SharedPreferences preferences;
+    InputMethodManager imm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class ListOfBooksActivity extends Activity {
         searchTerm = findViewById(R.id.searchTerm);
         searchButton = findViewById(R.id.searchButton);
 
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.showSoftInput(searchTerm, InputMethodManager.SHOW_IMPLICIT);
 
         searchButton.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +87,7 @@ public class ListOfBooksActivity extends Activity {
         input.setLayoutParams(lp);
         input.setText(preferences.getString("ip", "10.0.2.2"));
         input.setSelection(input.getText().length());
+        imm.showSoftInput(input, InputMethodManager.SHOW_IMPLICIT);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder
