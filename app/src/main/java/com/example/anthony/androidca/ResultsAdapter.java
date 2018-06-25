@@ -82,29 +82,21 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHold
         return books.size();
     }
 
-    private class getBookCover extends AsyncTask<Object, Void, ArrayList<Object>> {
+    private static class getBookCover extends AsyncTask<Object, Void, ArrayList<Object>> {
         @Override
         protected ArrayList<Object> doInBackground(Object... objects) {
             String isbn = (String) objects[0];
             ArrayList<Object> returnObjects = new ArrayList<Object>();
-            try {
-                returnObjects.add(BookModel.getBookCover(isbn));
-                returnObjects.add(objects[1]);
-                return returnObjects;
-            } catch (Exception e) {
-                return null;
-            }
-       }
+            returnObjects.add(BookModel.getBookCover(isbn));
+            returnObjects.add(objects[1]);
+            return returnObjects;
+        }
 
         @Override
         protected void onPostExecute(ArrayList<Object> objects) {
-           if (objects == null)
-                new ChangeIpAlertDialog(activity, "The current IP address is invalid. Please enter a new IP address");
-           else {
-               Bitmap bitmap = (Bitmap) objects.get(0);
-               ImageView bookCover = (ImageView) objects.get(1);
-               bookCover.setImageBitmap(bitmap);
-           }
+            Bitmap bitmap = (Bitmap) objects.get(0);
+            ImageView bookCover = (ImageView) objects.get(1);
+            bookCover.setImageBitmap(bitmap);
         }
     }
 }

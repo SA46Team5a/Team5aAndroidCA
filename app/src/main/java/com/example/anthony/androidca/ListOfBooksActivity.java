@@ -1,7 +1,9 @@
 package com.example.anthony.androidca;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -14,6 +16,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -23,8 +27,8 @@ public class ListOfBooksActivity extends Activity {
     RecyclerView searchResultsList;
     ResultsAdapter resultsAdapter;
     RecyclerView.LayoutManager layoutManager;
-    InputMethodManager imm;
     SharedPreferences preferences;
+    InputMethodManager imm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +53,14 @@ public class ListOfBooksActivity extends Activity {
         layoutManager = new LinearLayoutManager(this);
         searchResultsList = (RecyclerView) findViewById(R.id.search_result_recycler);
         searchResultsList.setLayoutManager(layoutManager);
+        new getSearchResults().execute("");
 
         preferences = getSharedPreferences(
-                "shared_preferences",
-                Context.MODE_PRIVATE
+           "shared_preferences",
+            Context.MODE_PRIVATE
         );
-        if (preferences.getString("ip", "").equals(""))
-            new ChangeIpAlertDialog(ListOfBooksActivity.this, "The current IP address is invalid. Please enter a new IP address");
-        else
-            new getSearchResults().execute("");
-   }
+        preferences.edit().putString("ip", "10.0.2.2");
+    }
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -69,23 +71,81 @@ public class ListOfBooksActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.change_ip:
-                new ChangeIpAlertDialog(this).show();
+                callChangeIPAlertDialog();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
-   public class getSearchResults extends AsyncTask<String, Void, ArrayList<BookModel>> {
+    public void callChangeIPAlertDialog() {
+
+        final EditText input = new EditText(this);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT);
+        input.setLayoutParams(lp);
+        input.setText(preferences.getString("ip", "10.0.2.2"));
+        input.setSelection(input.getText().length());
+        imm.showSoftInput(input, InputMethodManager.SHOW_IMPLICIT);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder
+                .setCancelable(true)
+                .setTitle("Change IP Address")
+                .setMessage("Please enter a new IP address")
+                .setView(input)
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                })
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String newIP = input.getText().toString();
+                        if (validateIPaddress(newIP)) {
+                            preferences.edit().putString("ip", newIP).apply();
+                            Toast.makeText(
+                                    ListOfBooksActivity.this,
+                                    preferences.getString("ip", ""),
+                                    Toast.LENGTH_SHORT
+                            ).show();
+                            BookModel.setIPAddress(newIP);
+                        } else {
+                            Toast.makeText(
+                                    ListOfBooksActivity.this,
+                                    "The provided IP address is invalid.",
+                                    Toast.LENGTH_SHORT
+                            ).show();
+                        }
+                    }
+                });
+        builder.show();
+    }
+
+    private boolean validateIPaddress(String ip) {
+        String[] ipParts = ip.split("\\.");
+        if (ipParts.length != 4)
+            return false;
+        for (String ipPart : ipParts) {
+            try {
+                int ipInt = Integer.parseInt(ipPart);
+                if (ipInt < 0 || ipInt >= 256)
+                    return false;
+            } catch (Exception e) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public class getSearchResults extends AsyncTask<String, Void, ArrayList<BookModel>> {
         @Override
         protected ArrayList<BookModel> doInBackground(String... strings) {
             ArrayList<BookModel> books = new ArrayList<BookModel>();
             if (strings != null) {
-                try {
-                    books = BookModel.search(strings[0]);
-                } catch (Exception e) {
-                    new ChangeIpAlertDialog(ListOfBooksActivity.this, "The current IP address is invalid. Please enter a new IP address");
-                }
+                books = BookModel.search(strings[0]);
             }
             return books;
         }
