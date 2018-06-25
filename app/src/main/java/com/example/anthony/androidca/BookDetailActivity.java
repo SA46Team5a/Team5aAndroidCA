@@ -23,12 +23,19 @@ public class BookDetailActivity extends Activity {
         new AsyncTask<String, Void, BookModel>() {
             @Override
             protected BookModel doInBackground(String... params) {
-                return BookModel.getbook(isbn);
+                try {
+                    return BookModel.getbook(isbn);
+                } catch (Exception e){
+                    return null;
+                }
             }
 
             @Override
             protected void onPostExecute(BookModel result) {
-               show(result);
+                if (result == null)
+                    new ChangeIpAlertDialog(BookDetailActivity.this, "The current IP address is invalid. Please enter a new IP address");
+                else
+                    show(result);
             }
         }.execute();
    }

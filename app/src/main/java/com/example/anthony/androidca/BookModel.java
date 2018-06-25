@@ -12,7 +12,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -21,9 +23,9 @@ import java.util.HashMap;
 
 public class BookModel extends HashMap<String, Object>{
 
-    static String ipAddress = "10.0.2.2";
-    static String imgURL = "http://" + ipAddress + "/BookStore/Resources/BookCovers/";
-    static String baseURL= "http://" + ipAddress + "/BookStore/Endpoint/IBookService.svc/Books/";
+    static private String ipAddress = "10.0.2.2";
+    static private String imgURL = "http://" + ipAddress + "/BookStore/Resources/BookCovers/";
+    static private String baseURL= "http://" + ipAddress + "/BookStore/Endpoint/IBookService.svc/Books/";
 
     public BookModel(JSONObject b) throws JSONException {
         setTitle(b.getString("Title"));
@@ -123,51 +125,37 @@ public class BookModel extends HashMap<String, Object>{
         put("ISBN", isbn);
     }
 
-    public static ArrayList<BookModel> search(String searchResult) {
+    public static ArrayList<BookModel> search(String searchResult) throws JSONException {
         ArrayList<BookModel> list = new ArrayList<BookModel>();
         JSONArray a;
         if (searchResult == null || searchResult.equals(""))
             a = JSONParser.getJSONArrayFromUrl(baseURL);
         else
             a = JSONParser.getJSONArrayFromUrl(baseURL + "Search/" + searchResult);
-        try {
-            BookModel book;
-            for (int i = 0; i<a.length(); i++) {
-                JSONObject b = a.getJSONObject(i);
-                book = new BookModel(b);
-                list.add(book);
-            }
-        } catch (Exception e) {
-            Log.e("BookModel.list()", "JSONArray error");
+
+        BookModel book;
+        for (int i = 0; i<a.length(); i++) {
+            JSONObject b = a.getJSONObject(i);
+            book = new BookModel(b);
+            list.add(book);
         }
         return(list);
     }
-    public static BookModel getbook(String isbn) {
+
+    public static BookModel getbook(String isbn) throws JSONException {
         JSONObject b = JSONParser.getJSONFromUrl(baseURL + isbn);
         BookModel book;
-        try {
-            book = new BookModel(b);
-        } catch (Exception e) {
-            book = new BookModel();
-            Log.e("BookModel.getBook()", "JSONArray error");
-        }
-
-        System.out.print(book.getAuthorName());
+        book = new BookModel(b);
         return book;
     }
 
-    public static Bitmap getBookCover(String isbn) {
+    public static Bitmap getBookCover(String isbn) throws IOException{
         String source = imgURL + isbn + ".jpg";
-        try {
-            URL url = new URL(source);
-            URLConnection connection = url.openConnection();
-            InputStream inputStream = connection.getInputStream();
-            Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-            inputStream.close();
-            return bitmap;
-        } catch (Exception e) {
-
-        }
-        return null;
+        URL url = new URL(source);
+        URLConnection connection = url.openConnection();
+        InputStream inputStream = connection.getInputStream();
+        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+        inputStream.close();
+        return bitmap;
     }
 }
